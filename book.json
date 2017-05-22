@@ -1,7 +1,7 @@
 {
-  "root": "./docs",
-  "title": "Alinex NodeJS Modules API",
-  "description": "A combined API of all the essential NodeJS modules within the Alinex namespace.",
+  "root": "./doc",
+  "title": "Alinex NodeJS Modules",
+  "description": "This is a book explaining all the major parts and development background around the Alinex namespaced modules.",
   "author": "Alexander Schilling",
   "language": "en"
 }
