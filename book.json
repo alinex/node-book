@@ -1,4 +1,4 @@
 {
-    title: "Alinex NodeJS Modules API",
-    description: "A combined API of all the essential NodeJS modules within the Alinex namespace."
+    "title": "Alinex NodeJS Modules API",
+    "description": "A combined API of all the essential NodeJS modules within the Alinex namespace."
 }
