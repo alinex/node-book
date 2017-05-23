@@ -6,7 +6,6 @@
   "author": "Alexander Schilling",
   "language": "en",
 
-  "cover": "https://alinex.github.io/images/Alinex-600.png",
   "pdf": {
     "pageNumbers": true,
     "headerTemplate": " ",
@@ -14,7 +13,7 @@
   },
 
   "plugins": [
-    "todo", "mermaid-2",
+    "todo", "mermaid-2", "plantuml",
     "-highlight", "code-highlighter",
     "toggle-chapters", "navigator", "downloadpdf"
   ],
