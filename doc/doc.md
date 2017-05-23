@@ -118,7 +118,17 @@ Using [Mermaid](https://knsv.github.io/mermaid/) it is possible to include easy
 flowcharts without a specific program. It is written as plaintext and converted into
 chart on display.
 
-```mermaid
+To make this work the following plugin have to be defined:
+
+``` json
+{
+  "plugins": ["mermaid-gb3"]
+}
+```
+
+As an example this can look like:
+
+``` mermaid
 graph TD;
   A-->B;
   A-->C;
@@ -126,4 +136,12 @@ graph TD;
   C-->D;
 ```
 
-It is also possible to include it from an external file using:
+This is done using:
+
+    ``` mermaid
+    graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+    ```
