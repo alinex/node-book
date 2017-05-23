@@ -79,8 +79,59 @@ All the pages are written as single files in the `doc` folder using
 [Markdown](https://toolchain.gitbook.com/syntax/markdown.html) language. It is nearly
 the same as used on GitHub.
 
+__Attention:__ In contrast to the other markdown parsers there should be no space between
+the code tag and the language.
+
 
 ## Plugins
+
+### Layout
+
+To improve the layout of the book I use three different plugins:
+
+```json
+{
+  "plugins": ["toggle-chapters", "navigator", "downloadpdf"]
+}
+```
+
+This will open/close chapters like folders, display a page navigation on the
+right side and a link to download as PDF on the top line.
+
+### ToDo
+
+As already used in GitHub markdown this plugin allows to write ToDo lists with
+check boxes which may be checked:
+
+```json
+{
+  "plugins": ["todo"]
+}
+```
+
+Now you may create a checklist using:
+
+- [ ] Mercury
+- [x] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+- [ ] Saturn
+- [ ] Uranus
+- [ ] Neptune
+- [ ] Comet Haley
+
+This is done using:
+
+    - [ ] Mercury
+    - [x] Venus
+    - [x] Earth (Orbit/Moon)
+    - [x] Mars
+    - [ ] Jupiter
+    - [ ] Saturn
+    - [ ] Uranus
+    - [ ] Neptune
+    - [ ] Comet Haley
 
 ### Code Highlighting
 
@@ -120,7 +171,7 @@ chart on display.
 
 To make this work the following plugin have to be defined:
 
-``` json
+```json
 {
   "plugins": ["mermaid-gb3"]
 }
@@ -138,10 +189,56 @@ graph TD;
 
 This is done using:
 
-    ``` mermaid
+    ```mermaid
     graph TD;
       A-->B;
       A-->C;
       B-->D;
       C-->D;
+    ```
+
+### PlantUML
+
+[PlantUML](http://plantuml.com/) is another format to make graphs out of text descriptions like mermaid.
+
+The plugin is loaded using:
+
+```json
+{
+  "plugins": ["plantuml"]
+}
+```
+
+And the diagram may look like:
+
+```uml
+@startuml
+
+    Class Stage
+    Class Timeout {
+        +constructor:function(cfg)
+        +timeout:function(ctx)
+        +overdue:function(ctx)
+        +stage: Stage
+    }
+     Stage <|-- Timeout
+
+@enduml
+```
+
+It is written using:
+
+    ```uml
+    @startuml
+
+        Class Stage
+        Class Timeout {
+            +constructor:function(cfg)
+            +timeout:function(ctx)
+            +overdue:function(ctx)
+            +stage: Stage
+        }
+         Stage <|-- Timeout
+
+    @enduml
     ```
