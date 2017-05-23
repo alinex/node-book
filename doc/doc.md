@@ -59,7 +59,7 @@ optional headings for chapters. This could look like:
 ```
 
 
-## eBook Cover
+## eBook Setup
 
 To have a special cover on the PDF, ePub version of the book is done by providing two images:
 - `cover.jpg`
@@ -72,6 +72,17 @@ A good cover should respect the following guidelines:
 - Clearly visible book title
 - Any important text should be visible in the small version
 
+And to set the layout you may use:
+
+```json
+{
+  "pdf": {
+    "pageNumbers": true,
+    "headerTemplate": " ",
+    "footerTemplate": " "
+  }
+}
+```
 
 ## Writing Documentation
 
@@ -205,7 +216,7 @@ The plugin is loaded using:
 
 ```json
 {
-  "plugins": ["plantuml"]
+  "plugins": ["puml"]
 }
 ```
 
@@ -220,3 +231,45 @@ It is written using:
     {% plantuml %}
     Bob->Alice : hello
     {% endplantuml %}
+
+
+## Final Setup
+
+__book.json__
+
+```json
+{
+  "root": "./doc",
+
+  "pdf": {
+    "pageNumbers": true,
+    "headerTemplate": " ",
+    "footerTemplate": " "
+  },
+
+  "plugins": [
+    "todo", "mermaid-gb3", "puml",
+    "-highlight", "code-highlighter",
+    "toggle-chapters", "navigator", "downloadpdf"
+  ],
+  "pluginsConfig": {
+    "downloadpdf": {
+      "base": "https://www.gitbook.com/download/pdf/book/alinex/nodejs",
+      "label": "Download PDF",
+      "multilingual": false
+    }
+  }
+}
+```
+
+__Further files__
+
+```coffee
+doc/README.md           # Introduction
+doc/SUMMARY.md          # Page index of book
+doc/cover.jpg           # eBook cover
+doc/cover_small.jpg     # small cover
+doc/styles/ebook.css    # user style
+doc/styles/pdf.css      # user style
+doc/styles/website.css  # user style
+```
