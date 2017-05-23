@@ -44,17 +44,114 @@ be referenced in the further description.
 The following list displays all directories of any state which may exist each
 listed with the states to which it belongs:
 
-    .             // source
-    bin           // all
-    dist          // build, ...
-    doc           // source, development
-    node_modules  // development, ...
-    src           // source, development
-    test          // source, development
-    local         // development, ...
+``` coffee
+    .             # source
+    bin           # all
+    dist          # build, ...
+    doc           # source, development
+    node_modules  # development, ...
+    src           # source, development
+    test          # source, development
+    local         # development, ...
+```
 
 Read the further sections to get more information of what resides in which
 directory and how it is used and created.
+
+
+## Ignorance
+
+To properly support the file structure in all phases two ignore files are needed:
+
+__.gitignore__ (used to not push everything to git)
+
+``` coffee
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage tools like jscoverage/JSCover, nyc or istanbul
+lib-cov
+coverage
+.nyc_output
+
+# Build tools like npm, yarn, grunt or bower
+.grunt
+bower_components
+.npm
+/*.tgz
+.yarn-integrity
+
+# Other caching like eslint or repl
+.eslintcache
+.node_repl_history
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Compiled code
+dist
+
+# Runtime data
+local
+```
+
+__.npmignore__ (used fro npm publishing)
+
+``` coffee
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage tools like jscoverage/JSCover, nyc or istanbul
+lib-cov
+coverage
+.nyc_output
+
+# Build tools like npm, yarn, grunt or bower
+.grunt
+bower_components
+.npm
+/*.tgz
+.yarn-integrity
+
+# Other caching like eslint or repl
+.eslintcache
+.node_repl_history
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Development folder
+doc
+book.json
+src
+test
+/.*
+
+# Runtime data
+local
+```
 
 
 ## Source
@@ -63,17 +160,17 @@ The source specifies what is stored in the code repository.
 
 This stage contains the following directories:
 
-``` text
-bin           // executable files
-src           // source code
-  doc         // general documentation which won't belong to any specific file
-  man         // sources for man pages
-test          // test data and test suites
-  data        // test data
-  mocha       // mocha test suites
-var           // data and code which maybe changed in installation
-  example     // examples
-  src         // original data, will be overridden on update
+``` coffee
+bin           # executable files
+src           # source code
+  doc         # general documentation which won't belong to any specific file
+  man         # sources for man pages
+test          # test data and test suites
+  data        # test data
+  mocha       # mocha test suites
+var           # data and code which maybe changed in installation
+  example     # examples
+  src         # original data, will be overridden on update
 ```
 
 The source code resides in the `src` folder and will be copied/compiled into
@@ -208,6 +305,8 @@ folder. If they are newer than the files there. And the files will be removed
 if no longer existent.
 
 This enables the user to upgrade the base system without losing the own changes.
+
+
 
 
 Where belongs what?
