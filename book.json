@@ -13,7 +13,7 @@
   },
 
   "plugins": [
-    "todo", "mermaid-gb3", "plantuml",
+    "todo", "mermaid-gb3", "uml",
     "-highlight", "code-highlighter",
     "toggle-chapters", "navigator", "downloadpdf"
   ],
@@ -25,6 +25,10 @@
     },
     "mermaid-2": {
        "theme": "forest"
+    },
+    "uml": {
+      "format": "png",
+      "nailgun": false
     }
   }
 }
