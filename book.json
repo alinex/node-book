@@ -1,7 +1,17 @@
 {
   "root": "./doc",
+
   "title": "Alinex NodeJS Modules",
   "description": "This is a book explaining all the major parts and development background around the Alinex namespaced modules.",
   "author": "Alexander Schilling",
-  "language": "en"
+  "language": "en",
+
+  "plugins": ["downloadpdf"],
+  "pluginsConfig": {
+    "downloadpdf": {
+      "base": "https://www.gitbook.com/download/pdf/book/alinex/nodejs",
+      "label": "Download PDF",
+      "multilingual": false
+    }
+  }
 }
