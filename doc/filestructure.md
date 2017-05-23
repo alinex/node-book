@@ -47,6 +47,7 @@ listed with the states to which it belongs:
 ``` coffee
     .             # source
     bin           # all
+    cover         # development
     dist          # build, ...
     doc           # source, development
     node_modules  # development, ...
@@ -59,7 +60,7 @@ Read the further sections to get more information of what resides in which
 directory and how it is used and created.
 
 
-## Ignorance
+## Ignoring Files
 
 To properly support the file structure in all phases two ignore files are needed:
 

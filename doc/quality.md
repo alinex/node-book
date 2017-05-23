@@ -1,5 +1,10 @@
 # Quality Standards
 
+
+## Goals
+
+These are seen as goals meaning not every goal may be reached or completely reached.
+
 ### Functionality
 
 Everything which is possible in the web should be allowed. The range should be kept wide but implemented a short range first.
@@ -43,10 +48,14 @@ in contradicts the fast prototyping.
 The system is complete class based with loose coupling and dependency injection to allow easy extension. Classes, libraries there is room and interfaces to add nearly anything.
 
 
-## Step by Step Module enhancing
+## Step by Step
 
-Six quality classes are defined to focus in module development while each one
-depends on the other with some more requirements:
+Technically spoken I will bring the modules through six different quality steps.
+Each class is based on the previous ones and can only be reached one after another.
+Hopefully a lot of my modules will reach class F but I am clear that this is not
+possible for all of them.
+
+But as with the goals I may use it as guideline which I try to follow but not need to.
 
 ### Class A
 
