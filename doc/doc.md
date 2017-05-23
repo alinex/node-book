@@ -71,7 +71,7 @@ The default highlight plugin that is built into GitBook must be disabled, becaus
 
 Now you can highlight some code using `&&&` at the start of any line:
 
-``` javascript
+``` js
 import restInit from 'alinex-rest/dist/init'
 import RestServer from 'alinex-rest/dist/server'
 
