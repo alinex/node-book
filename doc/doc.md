@@ -118,14 +118,12 @@ Using [Mermaid](https://knsv.github.io/mermaid/) it is possible to include easy
 flowcharts without a specific program. It is written as plaintext and converted into
 chart on display.
 
-{% mermaid %}
+```mermaid
 graph TD;
   A-->B;
   A-->C;
   B-->D;
   C-->D;
-{% endmermaid %}
+```
 
 It is also possible to include it from an external file using:
-
-    {% mermaid src="./diagram.mermaid" %}{% endmermaid %}
