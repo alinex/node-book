@@ -128,7 +128,7 @@ To make this work the following plugin have to be defined:
 
 As an example this can look like:
 
-``` mermaid
+```mermaid
 graph TD;
   A-->B;
   A-->C;
