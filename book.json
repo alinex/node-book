@@ -6,7 +6,14 @@
   "author": "Alexander Schilling",
   "language": "en",
 
-  "plugins": ["downloadpdf"],
+  "cover": "https://alinex.github.io/images/Alinex-600.png",
+  "pdf": {
+    "pageNumbers": true,
+    "headerTemplate": " ",
+    "footerTemplate": " "
+  },
+
+  "plugins": ["todo", "downloadpdf", "code-highlighter"],
   "pluginsConfig": {
     "downloadpdf": {
       "base": "https://www.gitbook.com/download/pdf/book/alinex/nodejs",

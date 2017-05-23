@@ -17,7 +17,6 @@ with GitHub and also working nearly as I did before using Markdown syntax.
 
 See all my current books under https://www.gitbook.com/@alinex
 
-
 ## Usage
 
 Firstly I had to install the GitHub Integrations Plugin within the GitBook options.
@@ -56,4 +55,27 @@ optional headings for chapters. This could look like:
 ### Modules
 - [Alinex](modules.md)
 - [3rd Party](3rd-party.md)
+```
+
+## Plugins
+
+### Code Highlighting
+
+The default highlight plugin that is built into GitBook must be disabled, because it prevents other plugins from processing code blocks. Here is an example book.json with the highlight plugin disabled and this code-highlighter plugin enabled.
+
+``` json
+{
+  "plugins": ["-highlight", "code-highlighter"]
+}
+```
+
+Now you can highlight some code using `&&&` at the start of any line:
+
+``` javascript
+import restInit from 'alinex-rest/dist/init'
+import RestServer from 'alinex-rest/dist/server'
+
+RestServer.init({ ... }) // configure server
+&&&RestServer.start()
+.then(doSomething)
 ```
