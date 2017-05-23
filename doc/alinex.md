@@ -44,7 +44,7 @@ the Alinex namespace.
 
 There is no real roadmap for the time and functionality. It all depends on my
 personal time and interests. But I will give a short overview of the big
-points, what is planned for this year:
+points, what is planned for this year (2017):
 
 - modernize some modules using ES6
 - REST Server implementation
