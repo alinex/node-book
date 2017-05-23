@@ -217,17 +217,6 @@ Bob->Alice : hello
 
 It is written using:
 
-    ```uml
-    @startuml
-
-        Class Stage
-        Class Timeout {
-            +constructor:function(cfg)
-            +timeout:function(ctx)
-            +overdue:function(ctx)
-            +stage: Stage
-        }
-         Stage <|-- Timeout
-
-    @enduml
-    ```
+    {% plantuml %}
+    Bob->Alice : hello
+    {% endplantuml %}
