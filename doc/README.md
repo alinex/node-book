@@ -9,6 +9,9 @@ change as the world around changes. Nobody needs to do it this way but it helps
 for all which are working deeply with the Alinex modules and participating to it
 to understand the parts behind.
 
+It explains a lot of technologies around NodeJS and web development but it is
+neither meant as a guide to teach the technologies more like a best practice
+and how to bring it all together.
 
 ## Basics
 
@@ -19,4 +22,22 @@ others, too.
 
 The key concepts are "Configuration over Implementation" and "Keep it Simple".
 
+## Structure of Book
+
+__Introduction__
+
+Contains this basic information and some words about Alinex and why and how.
+
+__Coding__
+
+Lots of opinionated decisions on how to build the software.
+
+__Modules__
+
 You will find a [list of modules](modules.md) which are notable within this documentation.
+And also some more third party modules with short descriptions.
+
+__Environment__
+
+And at last some documentation on how to make the development environment work
+seamlessly with lots of goodies.

@@ -3,7 +3,7 @@
 - [Introduction](README.md)
 - [Alinex Project](alinex.md)
 
-### Standards
+### Coding
 - [Quality](quality.md)
 - [File Structure](filestructure.md)
 - [Exit Codes](exitcodes.md)

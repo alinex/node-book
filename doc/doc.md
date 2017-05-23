@@ -17,6 +17,7 @@ with GitHub and also working nearly as I did before using Markdown syntax.
 
 See all my current books under https://www.gitbook.com/@alinex
 
+
 ## General Usage
 
 Firstly I had to install the GitHub Integrations Plugin within the GitBook options.
@@ -72,9 +73,19 @@ A good cover should respect the following guidelines:
 - Any important text should be visible in the small version
 
 
+## Writing Documentation
+
+All the pages are written as single files in the `doc` folder using
+[Markdown](https://toolchain.gitbook.com/syntax/markdown.html) language. It is nearly
+the same as used on GitHub.
+
+
 ## Plugins
 
 ### Code Highlighting
+
+In contrast to the already included code display this plugin allows to mark specific
+lines in the code like with an textmarker.
 
 The default highlight plugin that is built into GitBook must be disabled, because it prevents other plugins from processing code blocks. Here is an example book.json with the highlight plugin disabled and this code-highlighter plugin enabled.
 
@@ -100,3 +111,21 @@ RestServer.init({ ... }) // configure server
 &&&RestServer.start()
 .then(doSomething)
 ```
+
+### Mermaid Graphs
+
+Using [Mermaid](https://knsv.github.io/mermaid/) it is possible to include easy
+flowcharts without a specific program. It is written as plaintext and converted into
+chart on display.
+
+{% mermaid %}
+graph TD;
+  A-->B;
+  A-->C;
+  B-->D;
+  C-->D;
+{% endmermaid %}
+
+It is also possible to include it from an external file using:
+
+    {% mermaid src="./diagram.mermaid" %}{% endmermaid %}

@@ -30,6 +30,9 @@ I am using ES6 or CoffeeScript here but all modules will be transformed into pur
 JavaScript before releasing them. So you have no need to use the newest V8 or
 CoffeeScript if you include one of the Alinex modules.
 
+If the performance would be higher rated as the fast prototyping I would have
+decided to use Rust.
+
 
 ## Relations
 
