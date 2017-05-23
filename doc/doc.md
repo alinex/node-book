@@ -17,7 +17,7 @@ with GitHub and also working nearly as I did before using Markdown syntax.
 
 See all my current books under https://www.gitbook.com/@alinex
 
-## Usage
+## General Usage
 
 Firstly I had to install the GitHub Integrations Plugin within the GitBook options.
 Also the GitHub had to be allowed to use for GitBook.
@@ -56,6 +56,21 @@ optional headings for chapters. This could look like:
 - [Alinex](modules.md)
 - [3rd Party](3rd-party.md)
 ```
+
+
+## eBook Cover
+
+To have a special cover on the PDF, ePub version of the book is done by providing two images:
+- `cover.jpg`
+- `cover_small.jpg`
+
+A good cover should respect the following guidelines:
+- Size of 1800x2360 pixels for `cover.jpg`
+- Size of 200x262 pixels for `cover_small.jpg`
+- No border
+- Clearly visible book title
+- Any important text should be visible in the small version
+
 
 ## Plugins
 
