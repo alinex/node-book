@@ -13,7 +13,7 @@
   },
 
   "plugins": [
-    "todo", "mermaid-2", "plantuml",
+    "todo", "mermaid-gb3", "plantuml",
     "-highlight", "code-highlighter",
     "toggle-chapters", "navigator", "downloadpdf"
   ],
