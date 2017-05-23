@@ -1,6 +1,6 @@
 # 3rd Party Modules
 
-Some modules I find usable for some parts.
+Some awesome modules I use in my projects.
 
 ## Development
 

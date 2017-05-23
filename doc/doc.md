@@ -23,15 +23,13 @@ See all my current books under https://www.gitbook.com/@alinex
 Firstly I had to install the GitHub Integrations Plugin within the GitBook options.
 Also the GitHub had to be allowed to use for GitBook.
 
-Then I set up the repository by placing a `book.json` in it's root directory.
+Then I set up the repository by placing a `book.json` in it's root directory. It
+should at least contain the definition of the root directory used for the book.
+I need this because I store my documentation beside the code in its own directory.
 
 ``` javascript
 {
-  "root": "./doc",
-  "title": "Alinex NodeJS Modules",
-  "description": "This is a book explaining all the major parts and development background around the Alinex namespaced modules.",
-  "author": "Alexander Schilling",
-  "language": "en"
+  "root": "./doc"
 }
 ```
 
@@ -41,4 +39,21 @@ Then you need the `doc` directory with the following files:
 - `doc/SUMMARY.de`
 
 The `SUMMARY.de` should contain your table of contents as bullet list with
-optional headings for chapters.
+optional headings for chapters. This could look like:
+
+``` markdown
+# Summary
+
+- [Introduction](README.md)
+- [Alinex Project](alinex.md)
+
+### Standards
+- [Quality](quality.md)
+- [Documentation](doc.md)
+- [File Structure](filestructure.md)
+- [Exit Codes](exitcodes.md)
+
+### Modules
+- [Alinex](modules.md)
+- [3rd Party](3rd-party.md)
+```
