@@ -13,7 +13,7 @@
     "footerTemplate": " "
   },
 
-  "plugins": ["todo", "downloadpdf", "-highlight", "code-highlighter"],
+  "plugins": ["todo", "downloadpdf", "-highlight", "code-highlighter", "toggle-chapters"],
   "pluginsConfig": {
     "downloadpdf": {
       "base": "https://www.gitbook.com/download/pdf/book/alinex/nodejs",

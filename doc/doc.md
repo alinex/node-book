@@ -69,6 +69,12 @@ The default highlight plugin that is built into GitBook must be disabled, becaus
 }
 ```
 
+Also you need the following styles setting in `styles/website.css`, `styles/pdf.css` and `styles.ebook.css`:
+
+```css
+.code-line-highlight {background-color: #ffff00;}
+```
+
 Now you can highlight some code using `&&&` at the start of any line:
 
 ``` js
