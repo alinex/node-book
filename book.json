@@ -15,13 +15,16 @@
   "plugins": [
     "todo", "mermaid-gb3", "puml",
     "-highlight", "code-highlighter",
-    "toggle-chapters", "neo-navigator", "downloadpdf"
+    "toggle-chapters", "navigator", "downloadpdf"
   ],
   "pluginsConfig": {
     "downloadpdf": {
       "base": "https://www.gitbook.com/download/pdf/book/alinex/nodejs",
       "label": "Download PDF",
       "multilingual": false
+    },
+    "navigator": {
+      "showLevel": false
     }
   }
 }
