@@ -1,6 +1,6 @@
 .code-line-highlight {background-color: #ffff00}
-#anchors-navbar {color: darkgray}
+#anchors-navbar {color: darkgray; right: 28px; top: 45px}
 #goTop {display: none}
-@media (max-width: 150px) {
+@media (max-width: 660px) {
   #anchors-navbar {display: none}
 }

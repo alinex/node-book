@@ -132,6 +132,19 @@ $ yarn remove <package>
 
 This will remove the package and the dependencies from the `package.json` file.
 
+__Outdated packages__
+
+```bash
+# npm call, first set the version in package.json
+$ npm outdated
+# yarn call, will ask for new version
+$ yarn outdated
+```
+
+This will list the packages which are outdated.
+
+![npm outdated](npm-outdated.png)
+
 __Upgrade package__
 
 ```bash
@@ -147,6 +160,45 @@ set in `package.json` (and recreates `yarn.lock`).
 Interestingly, when specifying a package, it updates that package to latest release
 and updates the tag defined in `package.json`. This means this command might update
 packages to a new major release.
+
+__Upgrade interactive__
+
+```bash
+# npm call
+$ sudo npm install -g npm-check
+$ npm-check -u
+# yarn call
+$ yarn upgrade-interactive
+```
+
+This tool allows you to interactively decide what to upgrade.
+
+![npm outdated](npm-upgrade-interactive.png)
+
+__Run script__
+
+```bash
+# npm call
+$ npm run <script>
+# yarn call
+$ yarn run <script>
+# yarn alternative if script name not equal yarn commands
+$ yarn <script>
+```
+
+You can run the scripts defined in `package.json`. With both you can call the
+binaries located in `node_modules/.bin` directly without prefixing this path.
+
+__NPM Login__
+
+```bash
+# npm call, first set the version in package.json
+$ npm login
+# yarn call, will ask for new version
+$ yarn login
+```
+
+Both will ask and store the credentials to access the npm package repository.
 
 __Publish__
 
