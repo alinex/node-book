@@ -155,7 +155,6 @@ The exit codes in C/C++ which are in the kernel can be also found in:
 | 131 | State not recoverable |
 | 132 | Operation not possible due to RF-kill |
 | 133 | Memory page has hardware error |
-| ---- | --------------------------------------- |
 
 
 ## Unix Bash
@@ -178,7 +177,6 @@ The exit codes are arranged alongside the UNIX default:
 |  134 | SIGABRT or SIGIOT (Signal 6)            |
 |  143 | SIGTERM (Signal 15)                     |
 |  255 | Exit status out of range                |
-| ---- | --------------------------------------- |
 
 The codes from 2 - 125 are command specific, here you should look into the
 manpage for an explanation. But some have a most common use.
@@ -196,4 +194,3 @@ some Alinex common codes are set in the range 16-120 like:
 |    4 | Network problems                        |
 |    5 | Service or system access problem        |
 |    6 | No such service or address              |
-| ---- | --------------------------------------- |
