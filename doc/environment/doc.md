@@ -109,6 +109,24 @@ To improve the layout of the book I use three different plugins:
 This will open/close chapters like folders, display a page navigation on the
 right side and a link to download as PDF on the top line.
 
+To optimize the navigator output set the following in `styles/ebook.css` and
+`styles/pdf.css` to disable navigator:
+
+```css
+#anchors-navbar, #goTop {display: none}
+```
+
+And for `styles/website.css` add this to optimize display and remove for small
+display:
+
+```css
+#anchors-navbar {color: darkgray; right: 28px; top: 45px}
+#goTop {display: none}
+@media (max-width: 660px) {
+  #anchors-navbar {display: none}
+}
+```
+
 ### ToDo
 
 As already used in GitHub markdown this plugin allows to write ToDo lists with
