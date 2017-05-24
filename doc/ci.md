@@ -95,6 +95,8 @@ All files   |    54.44 |    34.21 |    31.82 |    55.06 |                |
 ------------|----------|----------|----------|----------|----------------|
 ```
 
+An report is build under ...
+
 ### Report on Coveralls
 
 [Coveralls](https://coveralls.io/) is another online tool (free for open source)
@@ -119,7 +121,7 @@ lines to `.travis`:
 ``` yaml
 script: "npm run-script test-travis"
 # Send coverage data to Coveralls
-after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
 ```
 
 Now you may also add the badge:
@@ -129,3 +131,43 @@ Now you may also add the badge:
   https://img.shields.io/coveralls/alinex/node-rest.svg?maxAge=86400)](
   https://coveralls.io/r/alinex/node-rest)
 ```
+
+### Alternatives
+
+You may also report to [CodeCov](https://codecov.io/) which is also free for open
+source using:
+
+```bash
+# install
+$ yarn add codecov --dev
+
+# use as after_script in travis:
+node_modules/.bin/codecov --token=:token
+```
+
+Or use [Codacy](https://www.codacy.com/) also for coverage report:
+
+```bash
+# install
+$ yarn add codacy-coverage --dev
+
+# use as after_script in travis:
+CODACY_PROJECT_TOKEN=<secret trepo token> cat coverage/lcov.info | node_modules/.bin/codacy-coverage
+```
+
+
+## Code Quality
+
+You may also report to [CodeCov](https://codecov.io/) which is also free for open
+source using:
+
+```bash
+# install
+$ yarn add codacy-coverage --dev
+
+# use as after_script in travis:
+node_modules/.bin/codecov --token=:token
+```
+
+Grade https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg
+Coverage:		https://img.shields.io/codacy/coverage/c44df2d9c89a4809896914fd1a40bedd.svg

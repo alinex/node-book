@@ -24,6 +24,9 @@ The key concepts are "Configuration over Implementation" and "Keep it Simple".
 
 ## Structure of Book
 
+I believe in open source and all the tools which are mentioned here are free for
+open source projects.But you may also use them for private use with some costs.
+
 __Introduction__
 
 Contains this basic information and some words about Alinex and why and how.
