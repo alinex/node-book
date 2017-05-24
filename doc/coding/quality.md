@@ -56,6 +56,7 @@ Hopefully a lot of my modules will reach class F but I am clear that this is not
 possible for all of them.
 
 But as with the goals I may use it as guideline which I try to follow but not need to.
+I will use this letter as specifier within the package documentation.
 
 ### Class A
 
