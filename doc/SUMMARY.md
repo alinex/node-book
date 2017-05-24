@@ -3,7 +3,7 @@
 - [Introduction](README.md)
 - [Alinex Project](alinex.md)
 
-- [Coding](coding/README-md)
+- [Coding](coding/README.md)
   - [Quality](coding/quality.md)
   - [ES6](coding/es6.md)
   - [Testing](coding/test.md)
