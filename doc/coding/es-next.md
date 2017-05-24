@@ -66,3 +66,19 @@ This defines the babel transformation to:
 2. Be converted into ES5 code by running `yarn build` (into `dist` folder)
 3. Everything in dist folder can be used without babel
 4. Before publishing to npm the `build` command is called automatically
+
+
+## Coding Rules
+
+The following rules defines the basics which are derived from the
+[Airbnb Style Guide](https://github.com/airbnb/javascript/blob/master/README.md).
+If configured the linter (see more under [Testing](test.md)) will ensure that these
+rules are followed.
+
+A compact list of the essential rules are:
+- avoid using `var`
+- literal object creation
+- use object method shorthand
+- use property shorthand
+- use single quote strings
+- use template strings

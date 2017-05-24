@@ -5,7 +5,7 @@
 
 - [Coding](coding/README.md)
   - [Quality](coding/quality.md)
-  - [ES6](coding/es-next.md)
+  - [ES.Next](coding/es-next.md)
   - [Testing](coding/test.md)
   - [File Structure](coding/filestructure.md)
   - [Exit Codes](coding/exitcodes.md)
@@ -19,4 +19,4 @@
   - [Continuous Integration](environment/ci.md)
   - [Documentation](environment/doc.md)
   - [Package Repository](environment/npm.md)
-  - [Dependency Monitor](environment/dependencies.md)
+  - [Dependency Monitor](environment/dependency.md)
