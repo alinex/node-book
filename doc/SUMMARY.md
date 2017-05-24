@@ -5,6 +5,7 @@
 
 - [Coding](coding/README.md)
   - [Quality](coding/quality.md)
+  - [NPM + yarn](coding/npm.md)
   - [ES.Next](coding/es-next.md)
   - [Testing](coding/test.md)
   - [File Structure](coding/filestructure.md)
@@ -18,5 +19,7 @@
   - [Project Management](environment/management.md)
   - [Continuous Integration](environment/ci.md)
   - [Documentation](environment/doc.md)
-  - [Package Repository](environment/npm.md)
+  - [Publishing](environment/publish.md)
   - [Dependency Monitor](environment/dependency.md)
+
+- [Conclusion](conclusion.md)

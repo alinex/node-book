@@ -9,12 +9,12 @@ and for/of loops, Python-style generators and generator expressions, arrow funct
 binary data, typed arrays, collections (maps, sets and weak maps), promises, number
 and math enhancements, reflection, and proxies.
 
-Browser and server support for ES2015 is still incomplete but it can be transpiled
-into ES5 code to work.
-
 Go into ES6:
 - [Overview examples](http://es6-features.org/#StringInterpolation)
 - [Learning tutorial](https://babeljs.io/learn-es2015/)
+
+Browser and server support for ES2015 is still incomplete but it can be transpiled
+into ES5 code to work (see below).
 
 
 ## Babel
@@ -33,8 +33,13 @@ First you need to install Babel CLI within your project as development requireme
 and you will also need some additional presets:
 
 ```bash
+# using yarn:
 $ yarn add babel-cli babel-preset-es2015 babel-preset-es2016 babel-preset-es2017 --dev
+# using npm:
+$ npm install babel-cli babel-preset-es2015 babel-preset-es2016 babel-preset-es2017 --save-dev
 ```
+
+## Usage
 
 To make it usable you also have to add a configuration file `.babelrc` in your project
 root and specify the installed presets to be used:
