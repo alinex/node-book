@@ -126,7 +126,7 @@ after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
 
 Now you may also add the badge:
 
-``` markdown
+```markdown
 [![Coverage Status](
   https://img.shields.io/coveralls/alinex/node-rest.svg?maxAge=86400)](
   https://coveralls.io/r/alinex/node-rest)
@@ -169,5 +169,10 @@ $ yarn add codacy-coverage --dev
 node_modules/.bin/codecov --token=:token
 ```
 
-Grade https://img.shields.io/codacy/grade/e27821fb6289410b8f58338c7e0bc686.svg
-Coverage:		https://img.shields.io/codacy/coverage/c44df2d9c89a4809896914fd1a40bedd.svg
+Now you may also add the badge:
+
+```markdown
+[![Codacy Badge](
+  https://api.codacy.com/project/badge/Grade/d1c36b200a8b47ffb31a1eabd2522d9e)](
+  https://www.codacy.com/app/alinex/node-rest/dashboard)
+```

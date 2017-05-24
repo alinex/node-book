@@ -1,3 +1,0 @@
-# Agile Management
-
-## Zube
