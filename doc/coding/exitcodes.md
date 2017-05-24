@@ -163,7 +163,6 @@ The exit codes in C/C++ which are in the kernel can be also found in:
 The exit codes are arranged alongside the UNIX default:
 
 
-| ---- | --------------------------------------- |
 | Code | Description                             |
 | ----:| --------------------------------------- |
 |    0 | OK - no error                           |
@@ -190,7 +189,6 @@ manpage for an explanation. But some have a most common use.
 The Alinex tools are based on the bash exit codes. In addition to the above
 some Alinex common codes are set in the range 16-120 like:
 
-| ---- | --------------------------------------- |
 | Code | Description                             |
 | ----:| --------------------------------------- |
 |    2 | Command parameter problem               |

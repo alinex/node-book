@@ -91,10 +91,10 @@ commands were removed, others modified and a couple of interesting commands were
 __Install globally__
 
 ```bash
-# npm call
-$ sudo npm install -g <package>
 # yarn call
 $ sudo yarn global add <package>
+# npm call
+$ sudo npm install -g <package>
 ```
 
 Unlike npm, where global operations are performed using the `-g` or `--global` flag,
@@ -103,10 +103,10 @@ Yarn commands need to be prefixed with global.
 __Install Module__
 
 ```bash
-# npm call
-$ npm install <package> --save
 # yarn call
 $ yarn add <package>
+# npm call
+$ npm install <package> --save
 ```
 
 This will install dependencies from the `package.json` file and allows you to add
@@ -115,19 +115,19 @@ new packages.
 For development modules use:
 
 ```bash
-# npm call
-$ npm install <package> --save-dev
 # yarn call
 $ yarn add <package> --dev
+# npm call
+$ npm install <package> --save-dev
 ```
 
 __Remove Package__
 
 ```bash
-# npm call
-$ npm remove <package> --save
 # yarn call
 $ yarn remove <package>
+# npm call
+$ npm remove <package> --save
 ```
 
 This will remove the package and the dependencies from the `package.json` file.
@@ -135,10 +135,10 @@ This will remove the package and the dependencies from the `package.json` file.
 __Outdated packages__
 
 ```bash
-# npm call, first set the version in package.json
-$ npm outdated
 # yarn call, will ask for new version
 $ yarn outdated
+# npm call, first set the version in package.json
+$ npm outdated
 ```
 
 This will list the packages which are outdated.
@@ -148,10 +148,10 @@ This will list the packages which are outdated.
 __Upgrade package__
 
 ```bash
-# npm call
-$ npm update <package> --save
 # yarn call
 $ yarn upgrade <package>
+# npm call
+$ npm update <package> --save
 ```
 
 This command upgrades packages to the latest version conforming to the version rules
@@ -164,11 +164,11 @@ packages to a new major release.
 __Upgrade interactive__
 
 ```bash
+# yarn call
+$ yarn upgrade-interactive
 # npm call
 $ sudo npm install -g npm-check
 $ npm-check -u
-# yarn call
-$ yarn upgrade-interactive
 ```
 
 This tool allows you to interactively decide what to upgrade.
@@ -178,12 +178,12 @@ This tool allows you to interactively decide what to upgrade.
 __Run script__
 
 ```bash
-# npm call
-$ npm run <script>
 # yarn call
 $ yarn run <script>
 # yarn alternative if script name not equal yarn commands
 $ yarn <script>
+# npm call
+$ npm run <script>
 ```
 
 You can run the scripts defined in `package.json`. With both you can call the
@@ -192,10 +192,10 @@ binaries located in `node_modules/.bin` directly without prefixing this path.
 __NPM Login__
 
 ```bash
-# npm call, first set the version in package.json
-$ npm login
 # yarn call, will ask for new version
 $ yarn login
+# npm call, first set the version in package.json
+$ npm login
 ```
 
 Both will ask and store the credentials to access the npm package repository.
@@ -203,10 +203,10 @@ Both will ask and store the credentials to access the npm package repository.
 __Publish__
 
 ```bash
-# npm call, first set the version in package.json
-$ npm publish <package>
 # yarn call, will ask for new version
 $ yarn publish <package>
+# npm call, first set the version in package.json
+$ npm publish <package>
 ```
 
 While npm published the package using the version from `package.json`, Yarn will

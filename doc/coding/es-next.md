@@ -1,6 +1,6 @@
 # ES.Next JavaScript
 
-At the moment I already try to write the new code in the upcoming new language
+At the moment I already write new code in the upcoming new language
 standards like ES6...
 
 ES6 also known as ECMAScript 2015 adds significant new syntax for writing complex
@@ -35,7 +35,7 @@ and you will also need some additional presets:
 ```bash
 # using yarn:
 $ yarn add babel-cli babel-preset-es2015 babel-preset-es2016 babel-preset-es2017 --dev
-# using npm:
+# alternative using npm:
 $ npm install babel-cli babel-preset-es2015 babel-preset-es2016 babel-preset-es2017 --save-dev
 ```
 
@@ -56,7 +56,7 @@ Now you can integrate babel with your project by defining it's call in the scrip
 section of `package.json`:
 
 ```json
-  {
+{
   "scripts": {
     "dev": "node_modules/.bin/babel-node src/index.js",
     "build": "babel src -d dist",
