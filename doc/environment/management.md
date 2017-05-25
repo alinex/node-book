@@ -21,7 +21,7 @@ status.
 The cards itself contain not much, mostly only the link to the GitHub planning board
 as description there more details can be found. It's open source so all is made publicly
 readable. Additionally each card is directly linked with it's development repository
-branch.\
+branch.<br/>
 Sometimes comments or checklists are there as an collection of new information which
 was not updated to the real planning board.
 
