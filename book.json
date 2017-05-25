@@ -22,9 +22,6 @@
       "base": "https://www.gitbook.com/download/pdf/book/alinex/nodejs",
       "label": "Download PDF",
       "multilingual": false
-    },
-    "navigator": {
-      "showLevel": false
     }
   }
 }

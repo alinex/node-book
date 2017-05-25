@@ -4,10 +4,32 @@ A lot of things can be done using GitHub alone, so at first you don't need more.
 But of course there are some extensions like [ZenHub](https://www.zenhub.com/)
 or [zube](https://zube.io/) which can also be used.
 
-In GitHub this is done using the Issues and the additional Project tab.
+In GitHub this is done using the Issues and the additional 'Project' tab. Each repository
+may have multiple projects.
+
+To have an overview about all the running projects I use [Trello](https://trello.com/) #
+a free and not so technical planning board.
 
 
-## Setup
+## Trello
+
+My NodeJS Projects are planned on a specific [board](https://trello.com/b/lOY5hCx7/alinex-node-js).
+The cards on this board are EPICS and represents the projects from GitHub (see later).
+Each of the column stands for a specific state and will show the project's current
+status.
+
+The cards itself contain not much, mostly only the link to the GitHub planning board
+as description there more details can be found. It's open source so all is made publicly
+readable. Additionally each card is directly linked with it's development repository
+branch.\
+Sometimes comments or checklists are there as an collection of new information which
+was not updated to the real planning board.
+
+
+## GitHub Setup
+
+The use of GitHub itself has already been described so here we go on with some help
+on how to use GitHub with issues and planning.
 
 ### Create a new project
 
