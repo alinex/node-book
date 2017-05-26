@@ -4,7 +4,8 @@
 - [Alinex Project](alinex.md)
 
 - [Environment](develop/README.md)
-  - [Code Repository](develop/github.md)
+  - [Version Control](develop/git.md)
+  - [Editor](develop/atom.md)
   - [Project Management](develop/management.md)
   - [NPM + yarn](develop/npm.md)
   - [ES.Next](develop/es-next.md)
@@ -22,3 +23,5 @@
 
 - [Alinex Modules](modules.md)
 - [3rd Party Modules](3rd-party.md)
+
+- [Roadmap](roadmap.md)

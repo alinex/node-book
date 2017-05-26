@@ -1,4 +1,18 @@
-# Code repository
+# Version Control System
+
+There are some different version control systems available but after the use of git
+since some time it was clear to go on with it. Not only because git is great but also
+because 
+
+
+## Git
+
+
+## GitHub
+
+GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+
+
 
 To store my code I use [GitHub](https://github.com) which is free for open source projects.
 

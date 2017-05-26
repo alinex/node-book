@@ -31,7 +31,9 @@ JavaScript before releasing them. So you have no need to use the newest V8 or
 CoffeeScript if you include one of the Alinex modules.
 
 If the performance would be higher rated as the fast prototyping I would have
-decided to use Rust.
+decided to use Rust. I checked the language out and found it appealing as core
+language. But mostly it is outweighed by the features of NodeJS modules and its
+fast prototyping.
 
 
 ## Relations
@@ -43,15 +45,43 @@ you don't have to use only the Alinex modules and they are usable also outside
 the Alinex namespace.
 
 
-## Roadmap
+## Open Source
 
-There is no real roadmap for the time and functionality. It all depends on my
-personal time and interests. But I will give a short overview of the big
-points, what is planned for this year (2017):
+Why do I things like Alinex as open source? Open source software isn't about doing
+free work. It's about giving back to the community.
 
-- modernize some modules using ES6
-- REST Server implementation
-- Universal frontend applications
+I live in a world of open source, most code on my notebook, workstation and servers
+are free and open source and they work. Linux isn't written by only unpaid people
+who just have a hobby. Linux is written mostly by companies like Novell, Red Hat,
+IBM, and even Oracle.
 
-See the [Planning Board](https://trello.com/b/lOY5hCx7/node-js) for more up to
-date information of there I'm working at now and what may be planned.
+Other people are helping me write my code in exchange for me sharing my code and
+knowledge. It's a win-win situation.
+
+
+## History
+
+After my study in the mid of 1998 I used a lot of Perl to do my webmaster job and
+we created different small to medium sized tools and also a full featured CMS with
+it to do this work. After that I worked some years as developer and architect in
+a university attached company making a web application based on Java technology.
+
+While I was working with Java I started making modules in php in my leisure time
+to check out what is possible. This was the start of a long running project which
+has not really a clear goal but to learn and make good basic modules.
+Over some years I got on with it but sometimes did some side peaks into other
+languages like Python or Ruby.
+
+As I got a peek at NodeJS (it was in version 0.10 at this time) I got a deeper look
+and started my first tests with it. I found it appealing and together with CoffeeScript
+(looks like python code ;-) I switched to more go with this language for the future.
+A lot of my ideas from the php modules were converted and I build just a good module
+base to also use it in different projects at work. In this time I has changed again
+and was more working in Administration and Development of IT operations helper systems.
+
+The whole time I try to be up to date and checkout new technologies and tools as far
+as they look suited for me. I'm not only into scripting and also got deeper looks into
+Go and Rust but I'm clearly a Linux guy.
+
+Now at the time of starting to write this book I go further on with JavaScript and
+try to catch time by using the newest technologies again.
