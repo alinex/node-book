@@ -113,6 +113,30 @@ $ git push    # now send your own changes
 
 ### Branching
 
+The organization of branches may be differ on your needs, you may use Git here
+in different ways:
+- __Historical branching__ there the `master` branch stores the official release
+history, and the `develop` branch serves as an integration branch for features.
+It's also convenient to tag all commits in the `master` branch with a version number.
+- __Feature branches__ with each new feature residing in its own branch, which can
+be pushed to the central repository for backup/collaboration. But, instead of
+branching off of `master`, feature branches use `develop` as their parent branch.
+When a feature is complete, it gets merged back into `develop`.
+- __Release branches__ there once `develop` has acquired enough features for a release  
+a `release` branch is forked off of `develop`. Only bug fixes, documentation generation,
+and other release-oriented tasks should go in this branch. Once it's ready to ship,
+the `release` gets merged into `master` and tagged with a version number. In addition,
+it should be merged back into `develop`, which may have progressed since the release
+was initiated.
+- __Maintenance branches__ are used as `hotfix` branch to quickly patch production releases.
+This is the only branch that should fork directly off of `master`. As soon as the fix is
+complete, it should be merged into both `master` and `develop`. `master` should be tagged
+with an updated version number.
+
+An full example of the different types of branches put together:
+
+![Branches](git-branches.svg)
+
 Create a new branch using:
 
 ```bash
