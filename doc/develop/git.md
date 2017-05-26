@@ -137,6 +137,10 @@ An full example of the different types of branches put together:
 
 ![Branches](git-branches.svg)
 
+But that's only one possibility, every organization is free to use branching as they
+need but it is important to clearly decide and communicate the proper way used within
+the organization.
+
 Create a new branch using:
 
 ```bash
