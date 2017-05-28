@@ -15,7 +15,11 @@ Some awesome modules I use in my projects.
 
 ## Reporting
 
+- Debug output [debug](https://github.com/visionmedia/debug)
+- Colors using [Chalk](https://github.com/chalk/chalk)
+
 ## File Formats
+
 
 ## Networking
 

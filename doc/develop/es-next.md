@@ -1,7 +1,7 @@
 # ES.Next JavaScript
 
 At the moment I already write new code in the upcoming new language
-standards like ES6...
+standards like ES6 and es7...
 
 ES6 also known as ECMAScript 2015 adds significant new syntax for writing complex
 applications, including classes and modules. Other new features include iterators
@@ -9,9 +9,10 @@ and for/of loops, Python-style generators and generator expressions, arrow funct
 binary data, typed arrays, collections (maps, sets and weak maps), promises, number
 and math enhancements, reflection, and proxies.
 
-Go into ES6:
+Go into ES6 and ES7:
 - [Overview examples](http://es6-features.org/#StringInterpolation)
 - [Learning tutorial](https://babeljs.io/learn-es2015/)
+- [Async/await](http://stackabuse.com/node-js-async-await-in-es7/)
 
 Browser and server support for ES2015 is still incomplete but it can be transpiled
 into ES5 code to work (see below).
@@ -34,9 +35,9 @@ and you will also need some additional presets:
 
 ```bash
 # using yarn:
-$ yarn add babel-cli babel-preset-es2015 babel-preset-es2016 babel-preset-es2017 --dev
+$ yarn add babel-cli babel-preset-es2015 babel-preset-stage-0 babel-polyfill --dev
 # alternative using npm:
-$ npm install babel-cli babel-preset-es2015 babel-preset-es2016 babel-preset-es2017 --save-dev
+$ npm install babel-cli babel-preset-es2015 babel-preset-stage-0 babel-polyfill --save-dev
 ```
 
 ## Usage
@@ -46,7 +47,7 @@ root and specify the installed presets to be used:
 
 ```json
 {
-  "presets": ["es2015", "es2016", "es2017"],
+  "presets": ["es2015", "stage-0"],
   "plugins": [],
   "comments": false
 }
@@ -58,8 +59,8 @@ section of `package.json`:
 ```json
 {
   "scripts": {
-    "dev": "node_modules/.bin/babel-node src/index.js",
-    "build": "babel src -d dist",
+    "dev": "node_modules/.bin/babel-node src/index.js --require babel-polyfill",
+    "build": "babel src -d dist --require babel-polyfill",
     "start": "node dist/index.js",
     "prepublish": "npm run build"
   }
@@ -71,6 +72,9 @@ This defines the babel transformation to:
 2. Be converted into ES5 code by running `yarn build` (into `dist` folder)
 3. Everything in dist folder can be used without babel
 4. Before publishing to npm the `build` command is called automatically
+
+The babel polyfills are needed to use the async/await which will come with
+node 7.6.
 
 
 ## Coding Rules

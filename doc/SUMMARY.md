@@ -19,6 +19,8 @@
 - [Coding](coding/README.md)
   - [Quality](coding/quality.md)
   - [File Structure](coding/filestructure.md)
+  - [Asynchronism](coding/async.md)
+  - [Debug Output](coding/debug.md)
   - [Exit Codes](coding/exitcodes.md)
 
 - [Alinex Modules](modules.md)

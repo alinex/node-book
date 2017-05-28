@@ -13,13 +13,13 @@ Editors often allow
 - and more...
 
 Select the editor which have all the tools you need and is appealing and easy to
-use in its behaviour for you.
+use in its behavior for you.
 
 
 ## Atom
 
 After using Sublime Text 3 for some time I was impressed about [Atom](https://atom.io/).
-Atom is mostly based on JavaScript itself to be easy extendable with plugins. Because of
+Atom is mostly based on JavaScript itself to be easy expendable with plugins. Because of
 that there are a lot of extensions for nearly every language and need.
 
 ### Installation
@@ -86,9 +86,9 @@ Multi cursor
 - `Strg-D` / `Strg-U` ad and remove cursor at the next match of selected word
 - `ESC` to remove multi cursor and go back to a single one
 
-Maybe extend the keymapping with the following:
+Maybe extend the key mapping with the following:
 
-```json
+```cson
 '.platform-linux atom-text-editor':
   'shift-alt-L': 'editor:split-selections-into-lines'
 ```

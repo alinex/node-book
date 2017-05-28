@@ -7,7 +7,7 @@ or [zube](https://zube.io/) which can also be used.
 In GitHub this is done using the Issues and the additional 'Project' tab. Each repository
 may have multiple projects.
 
-To have an overview about all the running projects I use [Trello](https://trello.com/) #
+To have an overview about all the running projects I use [Trello](https://trello.com/)
 a free and not so technical planning board.
 
 
@@ -17,6 +17,8 @@ My NodeJS Projects are planned on a specific [board](https://trello.com/b/lOY5hC
 The cards on this board are EPICS and represents the projects from GitHub (see later).
 Each of the column stands for a specific state and will show the project's current
 status.
+
+![Trello example](trello.png)
 
 The cards itself contain not much, mostly only the link to the GitHub planning board
 as description there more details can be found. It's open source so all is made publicly

@@ -47,13 +47,14 @@ listed with the states to which it belongs:
 ``` coffee
     .             # source
     bin           # all
+    config        # all
     src           # source, development
     doc           # source, development
     test          # source, development
     node_modules  # development, ...
     cover         # development
     dist          # build, ...
-    local         # development, ...
+    local         # production
 ```
 
 Read the further sections to get more information of what resides in which
@@ -165,6 +166,7 @@ This stage contains the following directories:
 
 ```coffee
 bin           # executable files
+config        # default/example configuration
 src           # source code
 doc           # general documentation as gitbook
 test          # test data and test suites
@@ -185,6 +187,7 @@ This stage contains the following directories:
 
 ```coffee
 bin           # executable files
+config        # default/example configuration
 src           # source code
 test          # test data and test suites
 doc           # created documentation (optional)
@@ -200,11 +203,12 @@ This stage contains the following directories:
 
 ```coffee
 bin           # executable files
+config        # default/example configuration
 dist          # copied/compiled code
   config      # compiled configurations
 node_modules  # npm installed packages
 local         # data and code which maybe changed in installation
-  config      # examples
+  config      # compiled configuration
 ```
 
 ### Productive
@@ -215,12 +219,14 @@ This stage contains the following directories:
 
 ```coffee
 bin           # executable files
+config        # configuration
 dist          # copied/compiled code
   config      # compiled configurations
 node_modules  # npm installed packages
 local         # data and code which maybe changed in installation
-  config      # examples
+  config      # compiled configuration
   log         # log files
+  data        # persistent file store
 ```
 
 
@@ -229,6 +235,6 @@ local         # data and code which maybe changed in installation
 The following list should give an overview of there to store what:
 
 - cache files -> systems temp folder
-- configuration -> system or user `alinex` folder or `local/config`
+- configuration -> system or user `alinex` folder or `config`
 - resources for binaries -> `bin/lib`
 - temporary files -> systems temp folder
