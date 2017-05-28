@@ -56,3 +56,14 @@ yarn upgrade-interactive v0.24.4
 ```
 
 Here you can select the packages to upgrade and process.
+
+
+## Gemnasium
+
+[Gemnasium](https://gemnasium.com/dashboard) will analyze the repositories after
+linked from GitHub and check for the dependent modules regularly. It will alert
+with an email if new versions are released often with changes.
+
+Ann online overview will look like:
+
+![Gemnasium Overview](dependency-gemnasium.png)

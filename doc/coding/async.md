@@ -13,13 +13,15 @@ pyramid. To solve this there are different efforts:
 - async/await
 
 Each one is build on top of it. To make the code readable Alinex modules uses async/await
-whenever possible.
+and Promises whenever possible.
 
 
 ## Async libraries
 
 While still working with callbacks some libraries like [async.js](http://caolan.github.io/async/)
 comes with multiple methods to simplify the management of callbacks.
+
+That's how Alinex worked earlier.
 
 
 ## Promises

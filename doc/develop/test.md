@@ -155,3 +155,52 @@ module.exports = {
 If you want some explanation for a rule best way ist too look up Google using the message
 or the rule name combined with `eslint`. Or look directly in the
 [rules index](http://eslint.org/docs/rules).
+
+
+## Monitoring Changes
+
+[Nodemon](https://nodemon.io/) is a utility that will monitor for any changes in
+the source and automatically restart the code. Perfect for development.
+
+__Installation__
+
+```bash
+# install using yarn
+$ yarn add nodemon --dev
+# alternative using npm
+$ npm install nodemon --save-dev
+```
+
+Now `nodemon` can be used instead of `node` to run the code and it will always stop
+and restart the code if the code changes. It can also be used to start any other
+executable.
+
+__Automatic tests__
+
+The following `package.json` setup will rerun the linter and unit tests each time
+you save changes. It has to be called using `yarn dev`. This is optimal for modules
+development.
+
+```json
+{
+  "scripts": {
+    "dev": "nodemon src/index.js --exec 'yarn lint && yarn test'",
+    "lint": "eslint src --ext .js",
+    "test": "nyc --require babel-core/register --require babel-polyfill mocha test/mocha"    
+  }
+}
+```
+
+__Server restart__
+
+To work with server we mostly only lint and then start the application itself.
+Therefore set the following `package.json` and also run it using `yarn dev`:
+
+```json
+{
+  "scripts": {
+    "dev": "nodemon src/start.js --exec 'yarn lint; babel-node --require babel-polyfill --exec node_modules/.bin/babel-node'",
+    "lint": "eslint src --ext .js"
+  }
+}
+```
