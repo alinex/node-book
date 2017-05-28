@@ -52,7 +52,7 @@ This will install the modules. The tests itself are mostly stored in the folder
 ```json
 {
   "scripts": {
-    "test": "mocha --require babel-core/register test/mocha"
+    "test": "mocha --require babel-core/register --require babel-polyfill test/mocha"
   }
 }
 ```
@@ -90,18 +90,12 @@ after(() => {
 })
 
 // run the tests
-describe('rest server', () => {
+describe('server', () => {
 
-  it('should give name and version number', (cb) => {
-    request('http://localhost:1974', (err, res, body) => {
-      should.not.exist(err)
-      res.should.have.status(200)
-      res.should.be.json()
-      var data = JSON.parse(body)
-      data.should.have.property('message')
-      data.message.should.containEql('Alinex REST Server')
-      cb()
-    })
+  it('should have default folders', async () => {
+    const compiler = new Compiler({schemaPath: 'test/data/config'})
+    const files = await compiler.schema()
+    files.should.be.above(1)
   })
 
 })

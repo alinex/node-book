@@ -1,7 +1,7 @@
 # ES.Next JavaScript
 
 At the moment I already write new code in the upcoming new language
-standards like ES6 and es7...
+standards like ES6 and newer...
 
 ES6 also known as ECMAScript 2015 adds significant new syntax for writing complex
 applications, including classes and modules. Other new features include iterators
@@ -9,10 +9,21 @@ and for/of loops, Python-style generators and generator expressions, arrow funct
 binary data, typed arrays, collections (maps, sets and weak maps), promises, number
 and math enhancements, reflection, and proxies.
 
-Go into ES6 and ES7:
-- [Overview examples](http://es6-features.org/#StringInterpolation)
-- [Learning tutorial](https://babeljs.io/learn-es2015/)
-- [Async/await](http://stackabuse.com/node-js-async-await-in-es7/)
+ES7 also known as ECMAScript 2016 adds only two new functionalities:
+- `Array.prototype.includes`
+- Exponentiation Operator
+
+ES8 officially named ECMAScript 2017 will add:
+- `Object.values`/`Object.entries`
+- String padding
+- `Object.getOwnPropertyDescriptors`
+- Trailing commas in function parameter lists and calls
+- Async Functions using async/awaut
+
+Learn more about this:
+- [ES6 Overview examples](http://es6-features.org/#StringInterpolation)
+- [ES6 Learning tutorial](https://babeljs.io/learn-es2015/)
+- [ES8 Async/await](http://stackabuse.com/node-js-async-await-in-es7/)
 
 Browser and server support for ES2015 is still incomplete but it can be transpiled
 into ES5 code to work (see below).

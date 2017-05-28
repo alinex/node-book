@@ -38,6 +38,10 @@ on how to use GitHub with issues and planning.
 Each repository can have multiple projects. You only need a Title and description
 to create a new one. After that it should be empty.
 
+To work within the project it is best to go to "Fullscreen" mode (more like full
+window mode) with the button on the right side. Only in this mode scrolling right/left
+works.
+
 ### Add columns
 
 The project view comes in form of a Kanban board like often used in Agile Development

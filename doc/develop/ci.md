@@ -95,7 +95,10 @@ All files   |    54.44 |    34.21 |    31.82 |    55.06 |                |
 ------------|----------|----------|----------|----------|----------------|
 ```
 
-An report is build under ...
+An report is build under `coverage/lcov-report/index.html`.
+
+![Coverage Report](ci-coverage.png)
+
 
 ### Report on Coveralls
 
@@ -112,7 +115,7 @@ $ yarn add coveralls --dev
 And then make a test call for travis in `package.json` to:
 
 ``` json
-  "test-travis": "nyc --reporter=lcov --require babel-core/register mocha test/mocha",
+  "test-travis": "nyc --reporter=lcov --require babel-core/register --require babel-polyfill mocha test/mocha",
 ```
 
 To use this script from travis and sending the results back to coveralls add the following
@@ -158,8 +161,9 @@ CODACY_PROJECT_TOKEN=<secret trepo token> cat coverage/lcov.info | node_modules/
 
 ## Code Quality
 
-You may also report to [CodeCov](https://codecov.io/) which is also free for open
-source using:
+You may also report to [Codacy](https://codacy.com.com/) which is also free for open
+source using. This will analyze the code and display different metrics available based
+on the used languages.
 
 ```bash
 # install
@@ -168,6 +172,10 @@ $ yarn add codacy-coverage --dev
 # use as after_script in travis:
 node_modules/.bin/codecov --token=:token
 ```
+
+![Example Report](ci-codacy.png)
+
+It will also show details to all the measurements.
 
 Now you may also add the badge:
 

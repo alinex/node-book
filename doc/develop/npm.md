@@ -17,7 +17,7 @@ The npm package repository contains hundreds of thousands of packages. Which can
 be easily installed and included in your code. See more of this side at
 [publishing](../environment/publish.md).
 
-### Installation
+__Installation__
 
 npm is bundled with NodeJS and installed with it. To update it to the newest version
 you may call:
@@ -25,6 +25,8 @@ you may call:
 ```bash
 $ sudo npm update -g npm
 ```
+
+See the usage below.
 
 
 ## Yarn
