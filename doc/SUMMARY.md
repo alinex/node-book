@@ -26,4 +26,7 @@
 - [Alinex Modules](modules.md)
 - [3rd Party Modules](3rd-party.md)
 
+- [Code Snippets](snippets.md)
+  - [File IO](file-io.md)
+
 - [Roadmap](roadmap.md)
