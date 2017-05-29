@@ -10,7 +10,7 @@ As this is a learning project I am not considered to go in a specific direction
 in a given time. But I made some big goals for the current year 2017:
 - modernize some modules using ES6
 - REST Server implementation
-- Universal frontend applications
+- Universal front end applications
 
 These are again framework steps to make something out of which to build real applications.
 Maybe some real applications will evolve beside these, at least to test that everything
