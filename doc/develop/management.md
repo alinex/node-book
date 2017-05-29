@@ -63,6 +63,8 @@ Agile:
 - QA
 - Done
 
+![Github project](github-project.png)
+
 ### Cards
 
 Within each column you can add cards and drag+drop them between the columns to show

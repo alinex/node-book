@@ -3,7 +3,8 @@
 Traditionally `npm` is used as package manager for NodeJS but you may also use the
 more modern `yarn` package manager.
 
-Because both are possible to use I will describe both but mainly use Yarn.
+Because both are possible to use I will describe both but mainly use Yarn. Maybe
+they will come together to the same features in the future.
 
 
 ## NPM

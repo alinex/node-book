@@ -4,6 +4,18 @@ As we are here in the NodeJS world there is not really a choice. The NPM is the 
 repository used here. But it can be used using the default `npm` tool or the more modern
 and optimized `yarn` tool.
 
+It is an easy task as already described in the description of the tools.
+
+```bash
+# yarn call, will ask for new version
+$ yarn publish <package>
+# npm call, first set the version in package.json
+$ npm publish <package>
+```
+
+While npm published the package using the version from `package.json`, Yarn will
+interactively ask for it and update package.json for you.
+
 After the first package was released you can also use a badge on your `README.md` like:
 
 ``` markdown

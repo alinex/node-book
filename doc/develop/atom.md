@@ -22,6 +22,8 @@ After using Sublime Text 3 for some time I was impressed about [Atom](https://at
 Atom is mostly based on JavaScript itself to be easy expendable with plugins. Because of
 that there are a lot of extensions for nearly every language and need.
 
+![Atom Editor](atom.png)
+
 ### Installation
 
 That is an easy task, only download and install it directly from their homepage.
