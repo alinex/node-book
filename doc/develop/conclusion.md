@@ -157,32 +157,6 @@ test
 local
 ```
 
-__book.json__
-
-```json
-{
-  "root": "./doc",
-
-  "pdf": {
-    "pageNumbers": true,
-    "headerTemplate": " ",
-    "footerTemplate": " "
-  },
-
-  "plugins": [
-    "todo", "mermaid-gb3", "puml",
-    "toggle-chapters", "navigator", "downloadpdf"
-  ],
-  "pluginsConfig": {
-    "downloadpdf": {
-      "base": "https://www.gitbook.com/download/pdf/book/alinex/xxxxxx",
-      "label": "Download PDF",
-      "multilingual": false
-    }
-  }
-}
-```
-
 __travis.yml__
 
 ```yaml
@@ -214,4 +188,109 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+```
+
+__book.json__
+
+```json
+{
+  "root": "./doc",
+
+  "pdf": {
+    "pageNumbers": true,
+    "headerTemplate": " ",
+    "footerTemplate": " "
+  },
+
+  "plugins": [
+    "todo", "mermaid-gb3", "puml",
+    "toggle-chapters", "navigator", "downloadpdf"
+  ],
+  "pluginsConfig": {
+    "downloadpdf": {
+      "base": "https://www.gitbook.com/download/pdf/book/alinex/xxxxxx",
+      "label": "Download PDF",
+      "multilingual": false
+    }
+  }
+}
+```
+
+__package.json__
+
+```json
+{
+  "name": "alinex-NAME",
+  "version": "2.1.4",
+  "description": "Some descriptive text.",
+  "copyright": "Alexander Schilling 2014-2017",
+  "private": false,
+  "keywords": [
+    "check",
+    "validate",
+    "sanitize",
+    "schema"
+  ],
+  "homepage": "http://alinex.github.io/node-NAME/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alinex/node-NAME"
+  },
+  "bugs": "https://github.com/alinex/node-NAME/issues",
+  "author": {
+    "name": "Alexander Schilling",
+    "email": "info@alinex.de",
+    "web": "http://alinex.de"
+  },
+  "contributors": [],
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js --exec 'yarn lint && yarn unit'",
+    "build": "babel src -d dist --require babel-polyfill",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "precommit": "npm run lint",
+    "prepublish": "npm run build",
+    "unit": "nyc --require babel-core/register --require babel-polyfill mocha test/mocha",
+    "test": "npm run lint && npm run unit",
+    "test-travis": "nyc --reporter=lcov --require babel-core/register --require babel-polyfill mocha test/mocha",
+    "lint": "eslint src --ext .js"
+  },
+  "directories": {
+    "lib": "./dist"
+  },
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "debug": "^2.6.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "coveralls": "^2.13.1",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-mocha": "^0.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-mocha-only": "^0.0.3",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.4.1",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.3.2",
+    "request": "^2.81.0",
+    "should": "^11.2.1",
+    "should-http": "^0.1.1",
+    "yarn": "^0.24.5"
+  },
+  "engines": {
+    "node": ">=6"
+  }
+}
 ```
