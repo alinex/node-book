@@ -9,7 +9,7 @@ Some awesome modules I use in my projects.
 - Linting [eslint](http://eslint.org/)
 - Hot Reloading with [nodemon](https://nodemon.io/)
 - Test Framework [mocha](https://mochajs.org/)
-  with [ShouldJS](https://shouldjs.github.io/) assertions
+  with [Chai](http://chaijs.com/) assertions
 - Code coverage started through [nyc](https://github.com/istanbuljs/nyc) CLI
   calling [istanbul](https://istanbul.js.org/)
 

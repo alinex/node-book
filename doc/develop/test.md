@@ -33,17 +33,18 @@ uncaught exceptions to the correct test cases.
 As mocha itself needs a powerful assertion library to check within the tests
 [Should.js](https://shouldjs.github.io/) allows just this. It supports a lot of
 methods which can be used to check any object.
+Another possibility is [Chai](http://chaijs.com/) which allows also to use an
+expect style which is more consistent as should.
 
-There are a lot of other alternatives like [Chai](http://chaijs.com/)...
-Here in Alinex the Should.js library is often used.
+Here in Alinex mostly Chai with expect style will be used.
 
 ### Installlation
 
 ```bash
 # yarn install
-$ yarn add mocha should should-http --dev
+$ yarn add mocha chai --dev
 # alternative npm install
-$ npm install mocha should should-http --save-dev
+$ npm install mocha chai --save-dev
 ```
 
 This will install the modules. The tests itself are mostly stored in the folder
@@ -71,11 +72,12 @@ $ npm run test
 An example test may look like:
 
 ```js
-import should from 'should'
-import shouldHttp from 'should-http'
+import chai from 'chai'
 import request from 'request'
 
 import server from '../../src/server'
+
+const expect = chai.expect
 
 // start server before tests
 before((cb) => {
@@ -95,7 +97,7 @@ describe('server', () => {
   it('should have default folders', async () => {
     const compiler = new Compiler({schemaPath: 'test/data/config'})
     const files = await compiler.schema()
-    files.should.be.above(1)
+    expect(files).to.be.above(1)
   })
 
 })
