@@ -159,9 +159,11 @@ transpiling:
 ```bash
 $ npm install --save-dev flow-bin babel-preset-flow
 $ npm run flow init
+$ sudo npm install flow-bin # needed for some IDEs
 # or
 $ yarn add --dev flow-bin babel-preset-flow
 $ yarn flow init
+$ sudo yarn global add flow-bin # needed for some IDEs
 ```
 
 Also you have to add the preset `flow`.

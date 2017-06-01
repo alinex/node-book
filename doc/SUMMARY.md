@@ -29,6 +29,7 @@
 
 - [Code Snippets](snippets/README.md)
   - [Modules](snippets/module.md)
+  - [Flow Annotations](snippets/flow.md)
   - [File IO](snippets/file-io.md)
 
 - [Roadmap](roadmap.md)

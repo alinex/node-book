@@ -65,6 +65,7 @@ __.eslintrc.js__
 module.exports = {
   env: { es6: true, node: true },
   extends: 'airbnb',
+  parser: "babel-eslint",
   parserOptions: { sourceType: 'module' },
   rules: {
     'max-len': [ 'warn', 100 ],
@@ -279,6 +280,7 @@ __package.json__
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "babel-preset-flow": "^6.23.0",
@@ -289,6 +291,7 @@ __package.json__
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-mocha": "^0.0.0",
     "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-mocha-only": "^0.0.3",

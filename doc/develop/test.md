@@ -116,10 +116,12 @@ plugins:
 $ yarn add eslint eslint-plugin-import eslint-plugin-promise eslint-plugin-standard --dev
 $ yarn add npm eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react --dev
 $ yarn add eslint-plugin-mocha-only @mocha/eslint-config-mocha --dev
+$ yarn add babel-eslint eslint-plugin-flowtype --dev
 # do the same using npm
 $ npm install eslint eslint-plugin-import eslint-plugin-promise eslint-plugin-standard --save-dev
 $ npm install npm eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react --save-dev
 $ npm install eslint-plugin-mocha-only @mocha/eslint-config-mocha --save-dev
+$ npm install babel-eslint eslint-plugin-flowtype --dev
 ```
 
 In the root folder the concrete rules can be specified `.eslintrc.js`:
@@ -128,6 +130,7 @@ In the root folder the concrete rules can be specified `.eslintrc.js`:
 module.exports = {
   env: { es6: true, node: true },
   extends: 'airbnb',
+  parser: "babel-eslint",
   parserOptions: { sourceType: 'module' },
   rules: {
     'indent': [ 'error', 2 ],
@@ -139,6 +142,8 @@ module.exports = {
   }
 };
 ```
+
+The `babel-eslint` parser is necessary to also parse the flow annotations correctly.
 
 And extend the mocha template for your test folder by placing an  `test/mocha/.eslintrc.js`
 file in your test folder:
