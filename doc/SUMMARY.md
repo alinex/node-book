@@ -28,6 +28,7 @@
 - [3rd Party Modules](3rd-party.md)
 
 - [Code Snippets](snippets/README.md)
+  - [Modules](snippets/module.md)
   - [File IO](snippets/file-io.md)
 
 - [Roadmap](roadmap.md)

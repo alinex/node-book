@@ -18,7 +18,7 @@ with GitHub and also working nearly as I did before using Markdown syntax.
 See all my current books under https://www.gitbook.com/@alinex
 
 
-## General Usage
+### General Usage
 
 Firstly I had to install the GitHub Integrations Plugin within the GitBook options.
 Also the GitHub had to be allowed to use for GitBook.
@@ -59,7 +59,7 @@ optional headings for chapters. This could look like:
 ```
 
 
-## eBook Setup
+### eBook Setup
 
 To have a special cover on the PDF, ePub version of the book is done by providing two images:
 - `cover.jpg`
@@ -84,7 +84,7 @@ And to set the layout you may use:
 }
 ```
 
-## Writing Documentation
+### Writing Documentation
 
 All the pages are written as single files in the `doc` folder using
 [Markdown](https://toolchain.gitbook.com/syntax/markdown.html) language. It is nearly
@@ -94,9 +94,9 @@ __Attention:__ In contrast to the other markdown parsers there should be no spac
 the code tag and the language.
 
 
-## Plugins
+### Plugins
 
-### Layout
+#### Layout
 
 To improve the layout of the book I use three different plugins:
 
@@ -127,7 +127,7 @@ display:
 }
 ```
 
-### ToDo
+#### ToDo
 
 As already used in GitHub markdown this plugin allows to write ToDo lists with
 check boxes which may be checked:
@@ -163,7 +163,7 @@ This is done using:
     - [ ] Comet Haley
 
 
-### Mermaid Graphs
+#### Mermaid Graphs
 
 Using [Mermaid](https://knsv.github.io/mermaid/) it is possible to include easy
 flowcharts without a specific program. It is written as plaintext and converted into
@@ -197,7 +197,7 @@ This is done using:
       C-->D;
     ```
 
-### PlantUML
+#### PlantUML
 
 [PlantUML](http://plantuml.com/) is another format to make graphs out of text descriptions like mermaid.
 
@@ -222,7 +222,7 @@ It is written using:
     {% endplantuml %}
 
 
-## Final Setup
+### Final Setup
 
 __book.json__
 
@@ -262,3 +262,15 @@ doc/styles/ebook.css    # user style
 doc/styles/pdf.css      # user style
 doc/styles/website.css  # user style
 ```
+
+
+## Internal API
+
+The following tools may also be used to create automatic generated API documentation
+out of the code:
+- [JSDoc](http://usejsdoc.org/)
+- [ESDoc](https://esdoc.org/)
+- [documentation.js](http://documentation.js.org/)
+
+But keep in mind that it can never replace good hand written user manuals which
+concentrate mostly on the parts really used.
