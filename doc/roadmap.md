@@ -26,3 +26,9 @@ also see the state of others. From time to time my decisions there will change.
 
 More details to each project may be found by the associated GitHub planning boards.
 See the details on each card.
+
+
+## Bugs or changes for the book
+
+Don't hesitate to send me any problems, tips or further information. Best way is to
+send them as [Issues](https://github.com/alinex/node-book/issues).

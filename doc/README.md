@@ -21,6 +21,11 @@ integrated. In the first line they solve my own problems
 but I will enlarge their functionality and often my problems are the problems of
 others, too.
 
+This is a living book, it is not only written to teach others but also to keep
+the knowledge as a reference for myself. Also it is not statically written but a
+type of living book which evolve and grow in time hopefully as fast as technology
+goes on. So read it once, but come back again to see the newest changes.
+
 The key concepts are "Configuration over Implementation" and "Keep it Simple".
 
 
@@ -46,6 +51,11 @@ __Modules__
 
 You will find a [list of modules](modules.md) which are notable within this documentation.
 And also some more third party modules with short descriptions.
+
+__Snippets / examples__
+
+This section will collect different code examples with short explanations to show
+how to do some specific tasks.
 
 
 ## Requirements
