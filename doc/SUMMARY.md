@@ -18,8 +18,8 @@
 
 - [Coding](coding/README.md)
   - [Quality](coding/quality.md)
-  - [JavaScript](coding/js.md)
   - [File Structure](coding/filestructure.md)
+  - [JavaScript](coding/js.md)
   - [Asynchronism](coding/async.md)
   - [Debug Output](coding/debug.md)
   - [Exit Codes](coding/exitcodes.md)

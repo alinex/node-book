@@ -51,6 +51,7 @@ That is an easy task, only download and install it directly from their homepage.
 - atom-ternjs - auto completion
 - autocomplete-modules - for require/import auto completion
 - linter-eslint - included linting
+- flow-ide - to lint and highlight flow syntax
 
 Also there are language and linter plugins for nearly every language and script
 you use.

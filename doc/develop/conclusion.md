@@ -1,9 +1,22 @@
 # Conclusion
 
+The basic settings used for my new modules are:
+
+| Software     | Comment |
+| ------------ | ------- |
+| Node >= 6    | Allows to use ES6 |
+| Babel        | Transpiler used for functionality up to stage-3 |
+| Mocha        | To run unit tests |
+| Flow         | For typüechecking |
+
+
+## Initial file structure
+
 All tools together used as an development environment will look like:
 
     .babelrc                # babel configuration
     .eslintrc.js            # eslint setup
+    .flowconfig             # for typechecking setup
     .git                    # git store
     .gitignore              # files to not add to git
     .npmignore              # files to not publish
@@ -38,7 +51,8 @@ __.babelrc__
 {
   "presets": [
     ["env", { "targets": { "node": 6 } }],
-    "stage-3"
+    "stage-3",
+    "flow"
   ],
   "plugins": [],
   "comments": false
@@ -246,13 +260,13 @@ __package.json__
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js --exec 'yarn lint && yarn unit'",
+    "dev": "nodemon src/index.js --exec 'yarn flow && yarn lint && yarn unit'",
     "build": "babel src -d dist --require babel-polyfill",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "precommit": "npm run lint",
     "prepublish": "npm run build",
     "unit": "nyc --require babel-core/register --require babel-polyfill mocha test/mocha",
-    "test": "npm run lint && npm run unit",
+    "test": "npm run flow && npm run lint && npm run unit",
     "test-travis": "nyc --reporter=lcov --require babel-core/register --require babel-polyfill mocha test/mocha",
     "lint": "eslint src --ext .js"
   },
@@ -267,6 +281,7 @@ __package.json__
     "babel-cli": "^6.24.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.24.1",
     "coveralls": "^2.13.1",
@@ -281,6 +296,7 @@ __package.json__
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-react": "^7.0.1",
     "eslint-plugin-standard": "^3.0.1",
+    "flow-bin": "^0.47.0",
     "mocha": "^3.4.1",
     "nodemon": "^1.11.0",
     "nyc": "^10.3.2",

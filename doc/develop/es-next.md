@@ -46,6 +46,11 @@ code and transpile them into an older language using transformations and polyfil
 Essentially this makes the code runable in an environment which didn't support
 the newest JavaScript standards.
 
+To see what babel will do try it out in the online [Babel REPL](https://babeljs.io/repl/).
+It´s an interactive online playground that shows you how babel will translate your
+code using different presets. But you can also use the `babel-node` CLI which comes
+with an REPL like node itself to run code interactively on your local machine.
+
 For the Alinex modules this is used to already use the newest language features
 while also get it working today.
 
@@ -100,8 +105,7 @@ root and specify the installed presets to be used:
 }
 ```
 
-
-## Usage
+### Usage
 
 Now you can integrate babel with your project by defining it's call in the scripts
 section of `package.json`:
@@ -132,17 +136,47 @@ The babel polyfills are needed to use the async/await which will come with
 node 7.6.
 
 
-## Coding Rules
+## Flow
 
-The following rules defines the basics which are derived from the
-[Airbnb Style Guide](https://github.com/airbnb/javascript/blob/master/README.md).
-If configured the linter (see more under [Testing](test.md)) will ensure that these
-rules are followed.
+[Flow](https://flow.org) is a static type checker which checks your code for errors
+through static type annotations. These types allows to tell Flow how you want your
+code to work, and Flow will make sure it does work that way.
 
-A compact list of the essential rules are:
-- avoid using `var`
-- literal object creation
-- use object method shorthand
-- use property shorthand
-- use single quote strings
-- use template strings
+```js
+// @flow
+function square(n: number): number {
+  return n * n // normally the error is here
+}
+
+square("2") // with flow it is reported here
+```
+
+### Installation
+
+This can be setup as extension to babel which will strip of the flow definition on
+transpiling:
+
+```bash
+$ npm install --save-dev flow-bin babel-preset-flow
+$ npm run flow init
+# or
+$ yarn add --dev flow-bin babel-preset-flow
+$ yarn flow init
+```
+
+Also you have to add the preset `flow`.
+
+Now the compiler will strip of all flow extensions and the builded code will work
+while it was never there.
+
+### Usage
+
+To take advantage of the flow checking you run it using:
+
+```bash
+$ npm run flow
+# or
+$ yarn flow
+```
+
+This command may be run automatically from the `test` or `dev` task.
