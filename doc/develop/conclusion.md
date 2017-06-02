@@ -286,6 +286,8 @@ __package.json__
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.24.1",
+    "chai": "^4.0.0",
+    "chai-as-promised": "^6.0.0",
     "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",

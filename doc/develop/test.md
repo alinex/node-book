@@ -42,9 +42,9 @@ Here in Alinex mostly Chai with expect style will be used.
 
 ```bash
 # yarn install
-$ yarn add mocha chai --dev
+$ yarn add mocha chai chai-as-promised --dev
 # alternative npm install
-$ npm install mocha chai --save-dev
+$ npm install mocha chai chai-as-promised --save-dev
 ```
 
 This will install the modules. The tests itself are mostly stored in the folder
@@ -73,10 +73,12 @@ An example test may look like:
 
 ```js
 import chai from 'chai'
+import chaiAsPromised from 'chai-as-promised'
 import request from 'request'
 
 import server from '../../src/server'
 
+chai.use(chaiAsPromised)
 const expect = chai.expect
 
 // start server before tests
@@ -101,6 +103,20 @@ describe('server', () => {
   })
 
 })
+```
+
+### Testing promises
+
+This is done using the extension [chai-as-promised](https://github.com/domenic/chai-as-promised)
+which was also included in the above installation and examples. Now you may also
+use the following tests:
+
+```js
+expect(promiseFn()).be.fulfilled
+expect(promiseFn()).eventually.deep.equal("foo")
+expect(promiseFn()).become("foo") // same as `.eventually.deep.equal`
+expect(promiseFn()).be.rejected
+expect(promiseFn()).be.rejectedWith(Error) // other variants of Chai's `throw` assertion work too
 ```
 
 
