@@ -42,9 +42,9 @@ Here in Alinex mostly Chai with expect style will be used.
 
 ```bash
 # yarn install
-$ yarn add mocha chai chai-as-promised --dev
+$ yarn add mocha chai --dev
 # alternative npm install
-$ npm install mocha chai chai-as-promised --save-dev
+$ npm install mocha chai --save-dev
 ```
 
 This will install the modules. The tests itself are mostly stored in the folder
@@ -73,12 +73,10 @@ An example test may look like:
 
 ```js
 import chai from 'chai'
-import chaiAsPromised from 'chai-as-promised'
 import request from 'request'
 
 import server from '../../src/server'
 
-chai.use(chaiAsPromised)
 const expect = chai.expect
 
 // start server before tests
@@ -105,18 +103,66 @@ describe('server', () => {
 })
 ```
 
-### Testing promises
+### Plugins
 
-This is done using the extension [chai-as-promised](https://github.com/domenic/chai-as-promised)
-which was also included in the above installation and examples. Now you may also
-use the following tests:
+There are lots of [Plugin](http://chaijs.com/plugins/) for chai to use but only
+some of them which are decided as very useful are shown here.
+
+__Promises__
+
+This is done using the extension [chai-as-promised](http://chaijs.com/plugins/chai-as-promised/)
+which was also included in the above installation and examples.
+
+Now you may also use the following tests:
 
 ```js
-expect(promiseFn()).be.fulfilled
-expect(promiseFn()).eventually.deep.equal("foo")
-expect(promiseFn()).become("foo") // same as `.eventually.deep.equal`
-expect(promiseFn()).be.rejected
-expect(promiseFn()).be.rejectedWith(Error) // other variants of Chai's `throw` assertion work too
+import chaiAsPromised from 'chai-as-promised'
+chai.use(chaiAsPromised)
+
+expect(promiseFn()).to.be.fulfilled
+expect(promiseFn()).to.eventually.deep.equal("foo")
+expect(promiseFn()).to.become("foo") // same as `.eventually.deep.equal`
+expect(promiseFn()).to.be.rejected
+expect(promiseFn()).to.be.rejectedWith(Error) // other variants of Chai's `throw` assertion work too
+```
+
+__Http__
+
+[chai-http](http://chaijs.com/plugins/chai-http/) includes a request method which
+easily checks the result:
+
+```js
+import chaiHttp from 'chai-http'
+chai.use(chaiHttp)
+
+chai.request('http://localhost:8080')
+  .get('/')
+```
+
+__File system__
+
+[chai-fs](http://chaijs.com/plugins/chai-fs/) will allow extensive test on the NodeJS
+filesystem. It has a lot of methods from which only some are shown here:
+
+```js
+import chaiFs from 'chai-fs'
+chai.use(chaiFs)
+
+expect(path).to.be.a.directory().with.files(array)
+expect(path).to.be.a.directory().and.empty
+expect(path).to.be.a.file().with.json
+```
+
+__RegExp matcher__
+
+[chai-match](http://chaijs.com/plugins/chai-match/) will check assertions using
+regular expressions:
+
+```js
+import chaiMatch from 'chai-match'
+chai.use(chaiMatch)
+
+expect('some thing to test').to.match(/some (\w+) to test/).and.capture(0).equals('thing')
 ```
 
 
