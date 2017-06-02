@@ -65,9 +65,6 @@ which are transformed down till a specific version to run.
 __Node 6 with support till stage-3__
 
 ```bash
-# using yarn:
-$ yarn add babel-cli babel-preset-env babel-preset-stage-3 babel-polyfill --dev
-# alternative using npm:
 $ npm install babel-cli babel-preset-env babel-preset-stage-3 babel-polyfill --save-dev
 ```
 
@@ -88,9 +85,6 @@ root and specify the installed presets to be used:
 __Older NodeJS support all proposals__
 
 ```bash
-# using yarn:
-$ yarn add babel-cli babel-preset-es2015 babel-preset-stage-0 babel-polyfill --dev
-# alternative using npm:
 $ npm install babel-cli babel-preset-es2015 babel-preset-stage-0 babel-polyfill --save-dev
 ```
 
@@ -127,8 +121,8 @@ section of `package.json`:
 Also specify the engines information to help people use your module in the right version.
 
 This defines the babel transformation to:
-1. Be used as JIT compiler in dev mode (run using `yarn dev`)
-2. Be converted into ES5 code by running `yarn build` (into `dist` folder)
+1. Be used as JIT compiler in dev mode (run using `npm run dev`)
+2. Be converted into ES5 code by running `npm run build` (into `dist` folder)
 3. Everything in dist folder can be used without babel
 4. Before publishing to npm the `build` command is called automatically
 
@@ -160,10 +154,6 @@ transpiling:
 $ npm install --save-dev flow-bin babel-preset-flow
 $ npm run flow init
 $ sudo npm install flow-bin # needed for some IDEs
-# or
-$ yarn add --dev flow-bin babel-preset-flow
-$ yarn flow init
-$ sudo yarn global add flow-bin # needed for some IDEs
 ```
 
 Also you have to add the preset `flow`.
@@ -177,8 +167,8 @@ To take advantage of the flow checking you run it using:
 
 ```bash
 $ npm run flow
-# or
-$ yarn flow
+# or if installed globally
+$ flow
 ```
 
 This command may be run automatically from the `test` or `dev` task.

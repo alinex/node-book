@@ -261,7 +261,7 @@ __package.json__
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js --exec 'yarn flow && yarn lint && yarn unit'",
+    "dev": "nodemon src/index.js --exec 'npm run flow && npm run lint -s && npm run unit'",
     "build": "babel src -d dist --require babel-polyfill",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "precommit": "npm run lint",
@@ -307,8 +307,7 @@ __package.json__
     "nyc": "^10.3.2",
     "request": "^2.81.0",
     "should": "^11.2.1",
-    "should-http": "^0.1.1",
-    "yarn": "^0.24.5"
+    "should-http": "^0.1.1"
   },
   "engines": {
     "node": ">=6"

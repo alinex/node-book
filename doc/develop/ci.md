@@ -60,7 +60,7 @@ To also get a coverage report on your code you may use `istanbul` through its CL
 application `nyc`:
 
 ``` bash
-$ yarn add nyc --dev
+$ npm install nyc --save-dev
 ```
 
 And then change the test call in `package.json` to:
@@ -72,7 +72,7 @@ And then change the test call in `package.json` to:
 This will give a pretty output on call:
 
 ``` bash
-$ yarn test
+$ npm run test
 
 Server listening on http://localhost:1974
   rest server
@@ -109,7 +109,7 @@ source view online.
 To bring this up also install:
 
 ``` bash
-$ yarn add coveralls --dev
+$ npm install coveralls --save-dev
 ```
 
 And then make a test call for travis in `package.json` to:
@@ -142,7 +142,7 @@ source using:
 
 ```bash
 # install
-$ yarn add codecov --dev
+$ npm install codecov --save-dev
 
 # use as after_script in travis:
 node_modules/.bin/codecov --token=:token
@@ -152,7 +152,7 @@ Or use [Codacy](https://www.codacy.com/) also for coverage report:
 
 ```bash
 # install
-$ yarn add codacy-coverage --dev
+$ npm install codacy-coverage --save-dev
 
 # use as after_script in travis:
 CODACY_PROJECT_TOKEN=<secret trepo token> cat coverage/lcov.info | node_modules/.bin/codacy-coverage
@@ -167,7 +167,7 @@ on the used languages.
 
 ```bash
 # install
-$ yarn add codacy-coverage --dev
+$ npm install codacy-coverage --save-dev
 
 # use as after_script in travis:
 node_modules/.bin/codecov --token=:token

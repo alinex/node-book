@@ -26,9 +26,17 @@ You can also use a badge on your `README.md` like:
 
 ## Checking on Console
 
-To check or upgrade the dependencies on console the `yarn` tool has a lot of goodies.
+With npm you have to use the additional package [nvm-check](https://github.com/dylang/npm-check/blob/master/README.md). After you have
+installed this globally or within your project. You may call it using `npm-check -u`
+this will show an interactive selection to upgrade.
+
+![npm-check](npm-check.png)
+
+You may select the updates you want to have and hit enter to upgrade them.
+
+To check or upgrade the dependencies on console using the `yarn` tool this is integrated.
 This is only possible if the package is also installed using `yarn install` (if
-not, call it now).
+not, call it first).
 
 ``` bash
 $ yarn outdated

@@ -174,7 +174,7 @@ $ yarn outdated
 
 This will list the packages which are outdated.
 
-![npm outdated](npm-outdated.png)
+![npm-check](npm-check.png)
 
 __Upgrade package__
 
@@ -209,8 +209,8 @@ This tool allows you to interactively decide what to upgrade.
 __Run script__
 
 ```bash
-# npm call
-$ npm run <script>
+# npm call, the option -s is optional and suppress the mostly unwanted error hints
+$ npm run <script> -s
 # yarn call
 $ yarn run <script>
 # yarn alternative if script name not equal yarn commands

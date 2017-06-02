@@ -1,15 +1,12 @@
 # Package Repository
 
 As we are here in the NodeJS world there is not really a choice. The NPM is the only
-repository used here. But it can be used using the default `npm` tool or the more modern
-and optimized `yarn` tool.
+repository used here. But it can be used using the default `npm` tool or the
+alternative `yarn` tool.
 
 It is an easy task as already described in the description of the tools.
 
 ```bash
-# yarn call, will ask for new version
-$ yarn publish <package>
-# npm call, first set the version in package.json
 $ npm publish <package>
 ```
 

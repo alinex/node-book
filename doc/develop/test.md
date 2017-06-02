@@ -41,9 +41,6 @@ Here in Alinex mostly Chai with expect style will be used.
 ### Installlation
 
 ```bash
-# yarn install
-$ yarn add mocha chai --dev
-# alternative npm install
 $ npm install mocha chai --save-dev
 ```
 
@@ -61,9 +58,6 @@ This will install the modules. The tests itself are mostly stored in the folder
 Now you can run your tests using:
 
 ```bash
-# run using yarn
-$ yarn test
-# alternative npm call
 $ npm run test
 ```
 
@@ -172,18 +166,10 @@ To use [ESLint](http://eslint.org/) together with Mocha and ES6 you have to add 
 plugins:
 
 ```bash
-# install basic eslint
-# add the airbnb standard rules
-# add the plugins for mocha
-$ yarn add eslint eslint-plugin-import eslint-plugin-promise eslint-plugin-standard --dev
-$ yarn add npm eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react --dev
-$ yarn add eslint-plugin-mocha-only @mocha/eslint-config-mocha --dev
-$ yarn add babel-eslint eslint-plugin-flowtype --dev
-# do the same using npm
 $ npm install eslint eslint-plugin-import eslint-plugin-promise eslint-plugin-standard --save-dev
 $ npm install npm eslint-config-airbnb eslint-plugin-jsx-a11y eslint-plugin-react --save-dev
 $ npm install eslint-plugin-mocha-only @mocha/eslint-config-mocha --save-dev
-$ npm install babel-eslint eslint-plugin-flowtype --dev
+$ npm install babel-eslint eslint-plugin-flowtype --save-dev
 ```
 
 In the root folder the concrete rules can be specified `.eslintrc.js`:
@@ -234,9 +220,6 @@ the source and automatically restart the code. Perfect for development.
 __Installation__
 
 ```bash
-# install using yarn
-$ yarn add nodemon --dev
-# alternative using npm
 $ npm install nodemon --save-dev
 ```
 
@@ -247,13 +230,13 @@ executable.
 __Automatic tests__
 
 The following `package.json` setup will rerun the linter and unit tests each time
-you save changes. It has to be called using `yarn dev`. This is optimal for modules
+you save changes. It has to be called using `npm run dev`. This is optimal for modules
 development.
 
 ```json
 {
   "scripts": {
-    "dev": "nodemon src/index.js --exec 'yarn lint && yarn test'",
+    "dev": "nodemon src/index.js --exec 'npm run lint -s && npm run test'",
     "lint": "eslint src --ext .js",
     "test": "nyc --require babel-core/register --require babel-polyfill mocha test/mocha"    
   }
@@ -263,12 +246,12 @@ development.
 __Server restart__
 
 To work with server we mostly only lint and then start the application itself.
-Therefore set the following `package.json` and also run it using `yarn dev`:
+Therefore set the following `package.json` and also run it using `npm run dev`:
 
 ```json
 {
   "scripts": {
-    "dev": "nodemon src/start.js --exec 'yarn lint; babel-node --require babel-polyfill --exec node_modules/.bin/babel-node'",
+    "dev": "nodemon src/start.js --exec 'npm run lint; babel-node --require babel-polyfill --exec node_modules/.bin/babel-node'",
     "lint": "eslint src --ext .js"
   }
 }

@@ -16,9 +16,6 @@ A lot of foreign libraries are also using debug so it will work on their code al
 Because this should also stay in the productive code
 
 ```bash
-# install using yarn
-yarn add debug chalk
-# and alternatively using npm
 npm install debug chalk --save
 ```
 
