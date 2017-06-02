@@ -7,7 +7,7 @@
   - [Version Control](develop/git.md)
   - [Editor](develop/atom.md)
   - [Project Management](develop/management.md)
-  - [NPM + yarn](develop/npm.md)
+  - [NodeJS](develop/npm.md)
   - [ES.Next](develop/es-next.md)
   - [Testing](develop/test.md)
   - [Continuous Integration](develop/ci.md)

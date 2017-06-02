@@ -1,10 +1,43 @@
-# Package manager
+# NodeJS with package manager
 
-Traditionally `npm` is used as package manager for NodeJS but you may also use the
-more modern `yarn` package manager.
+Traditionally `npm` is used as package manager for NodeJS but you may also use
+`yarn` package manager which offered more speed till npm V5 (NodeJS 8). Within
+this book we mostly keep going with the default npm but both works the same.
 
-Because both are possible to use I will describe both but mainly use Yarn. Maybe
-they will come together to the same features in the future.
+
+## NodeJS
+
+But before you need the [NodeJS](https://nodejs.org) system installed using the
+instructions on the website. It already comes with the NPM package manager.
+
+For development systems you may test different versions so you may want to switch
+between versions on demand. This is possible using the [nvm](https://github.com/creationix/nvm)
+version manager.
+
+### NVM
+
+Install it using the script:
+
+```bash
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+```
+
+Then you may directly use it. It can install other versions and switch between
+versions easily.
+
+Some of the commands are:
+
+| Command | Usage |
+| ------- | ----- |
+| `nvm current` | display crrently activated version |
+| `nvm ls` | list installed versions |
+| `nvm ls-remote` | list versions available for install |
+| `nvm install <version>` | download and install a version |
+| `nvm uninstall <version>` | uninstall a version |
+| `nvm use <version>` | modify path to use version |
+| `nvm which <version>` | show path there this version is installed |
+
+All node installations are done within the `~/.nvm` directory.
 
 
 ## NPM
@@ -32,13 +65,8 @@ See the usage below.
 
 ## Yarn
 
-[Yarn](https://yarnpkg.com) is a new JavaScript package manager built by Facebook,
-Google, Exponent and Tilde. As can be read in the official announcement, its purpose
-is to solve a handful of problems that these teams faced with npm, namely:
-
-- installing packages wasn’t fast/consistent enough, and
-- there were security concerns, as npm allows packages to run code on installation.
-
+[Yarn](https://yarnpkg.com) is an alternative JavaScript package manager built by Facebook,
+Google, Exponent and Tilde.
 Yarn is only a new CLI client that fetches modules from the npm registry.
 
 __yarn.lock__
@@ -58,7 +86,7 @@ lock file. Every time a module is added, Yarn creates (or updates) a `yarn.lock`
 This way you can guarantee another machine installs the exact same package, while
 still having a range of allowed versions defined in package.json.
 
-It is automatically working like npm with `npm-shrinkwrap.json`.
+It is automatically working like npm with `npm-shrinkwrap.json` or npm since V5.
 
 __Parallel Installation__
 
@@ -94,10 +122,10 @@ commands were removed, others modified and a couple of interesting commands were
 __Install globally__
 
 ```bash
-# yarn call
-$ sudo yarn global add <package>
 # npm call
 $ sudo npm install -g <package>
+# yarn call
+$ sudo yarn global add <package>
 ```
 
 Unlike npm, where global operations are performed using the `-g` or `--global` flag,
@@ -106,10 +134,10 @@ Yarn commands need to be prefixed with global.
 __Install Module__
 
 ```bash
-# yarn call
-$ yarn add <package>
 # npm call
 $ npm install <package> --save
+# yarn call
+$ yarn add <package>
 ```
 
 This will install dependencies from the `package.json` file and allows you to add
@@ -118,19 +146,19 @@ new packages.
 For development modules use:
 
 ```bash
-# yarn call
-$ yarn add <package> --dev
 # npm call
 $ npm install <package> --save-dev
+# yarn call
+$ yarn add <package> --dev
 ```
 
 __Remove Package__
 
 ```bash
-# yarn call
-$ yarn remove <package>
 # npm call
 $ npm remove <package> --save
+# yarn call
+$ yarn remove <package>
 ```
 
 This will remove the package and the dependencies from the `package.json` file.
@@ -138,10 +166,10 @@ This will remove the package and the dependencies from the `package.json` file.
 __Outdated packages__
 
 ```bash
-# yarn call, will ask for new version
-$ yarn outdated
 # npm call, first set the version in package.json
 $ npm outdated
+# yarn call, will ask for new version
+$ yarn outdated
 ```
 
 This will list the packages which are outdated.
@@ -151,10 +179,10 @@ This will list the packages which are outdated.
 __Upgrade package__
 
 ```bash
-# yarn call
-$ yarn upgrade <package>
 # npm call
 $ npm update <package> --save
+# yarn call
+$ yarn upgrade <package>
 ```
 
 This command upgrades packages to the latest version conforming to the version rules
@@ -167,11 +195,11 @@ packages to a new major release.
 __Upgrade interactive__
 
 ```bash
-# yarn call
-$ yarn upgrade-interactive
 # npm call
 $ sudo npm install -g npm-check
 $ npm-check -u
+# yarn call
+$ yarn upgrade-interactive
 ```
 
 This tool allows you to interactively decide what to upgrade.
@@ -181,12 +209,12 @@ This tool allows you to interactively decide what to upgrade.
 __Run script__
 
 ```bash
+# npm call
+$ npm run <script>
 # yarn call
 $ yarn run <script>
 # yarn alternative if script name not equal yarn commands
 $ yarn <script>
-# npm call
-$ npm run <script>
 ```
 
 You can run the scripts defined in `package.json`. With both you can call the
@@ -195,10 +223,10 @@ binaries located in `node_modules/.bin` directly without prefixing this path.
 __NPM Login__
 
 ```bash
-# yarn call, will ask for new version
-$ yarn login
 # npm call, first set the version in package.json
 $ npm login
+# yarn call, will ask for new version
+$ yarn login
 ```
 
 Both will ask and store the credentials to access the npm package repository.
@@ -206,10 +234,10 @@ Both will ask and store the credentials to access the npm package repository.
 __Publish__
 
 ```bash
-# yarn call, will ask for new version
-$ yarn publish <package>
 # npm call, first set the version in package.json
 $ npm publish <package>
+# yarn call, will ask for new version
+$ yarn publish <package>
 ```
 
 While npm published the package using the version from `package.json`, Yarn will

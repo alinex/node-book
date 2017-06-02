@@ -1,25 +1,23 @@
 # Alinex NodeJS Modules
 
 This is a book explaining all the major parts and development background around
-the Alinex namespaced modules.
+the Alinex namespaced modules. But it is not completely specific but mostly a book
+about NodeJS development with best practice from the Alinex modules.
 
-Keep in mind that some of the modules use an older standard but will eventually
-be upgraded to this. It is also not a real hard fact but a definition which may
-change as the world around changes. Nobody needs to do it this way but it helps
-for all which are working deeply with the Alinex modules and participating to it
-to understand the parts behind.
+The decisions from this book are not real hard facts but a definition to follow as
+possible. It may change as the world around changes. And you don't have to
+follow this standards but it helps for all which are working deeply with the Alinex
+modules and participating to it to understand the parts behind.
 
-It explains a lot of technologies around NodeJS and web development but it is
-neither meant as a guide to teach the technologies more like a best practice
-and how to bring it all together.
+Some of the Alinex modules use an older standard (CoffeeScript based) but will
+eventually be upgraded to this.
+
+Keep in mind that the book explains a lot of technologies around NodeJS and web
+development but it is neither meant as a guide to teach the technologies more like
+a best practice and how to bring it all together.
 
 
-## Basics
-
-All the different modules in the Alinex namespace are loose coupled but optimal
-integrated. In the first line they solve my own problems
-but I will enlarge their functionality and often my problems are the problems of
-others, too.
+## Why this book
 
 This is a living book, it is not only written to teach others but also to keep
 the knowledge as a reference for myself. Also it is not statically written but a
@@ -27,6 +25,10 @@ type of living book which evolve and grow in time hopefully as fast as technolog
 goes on. So read it once, but come back again to see the newest changes.
 
 The key concepts are "Configuration over Implementation" and "Keep it Simple".
+
+All the different modules in the Alinex namespace are loose coupled but optimal
+integrated. At first they solve my own problems but I will enlarge their functionality
+and often my problems are the problems of others, too.
 
 
 ## Structure of Book
