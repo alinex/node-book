@@ -10,11 +10,16 @@ this book we mostly keep going with the default npm but both works the same.
 But before you need the [NodeJS](https://nodejs.org) system installed using the
 instructions on the website. It already comes with the NPM package manager.
 
+Which version to use is based on the modules you want to run. But while NodeJS
+is mostly very good in backward compatibility also over major versions you should
+to go with the latest stable LTS (long term support) version.
+
+### Node version manager
+
 For development systems you may test different versions so you may want to switch
 between versions on demand. This is possible using the [nvm](https://github.com/creationix/nvm)
-version manager.
-
-### NVM
+version manager. This allows you to try out your code in different versions and
+find problems.
 
 Install it using the script:
 
@@ -39,6 +44,9 @@ Some of the commands are:
 
 All node installations are done within the `~/.nvm` directory.
 
+If you detect that the module won't work with specific versions of node you should
+define the working versions in `package.json`.
+
 
 ## NPM
 
@@ -62,12 +70,24 @@ $ sudo npm update -g npm
 
 See the usage below.
 
+__New in npm 5__
+
+- standardised lockfile `package-lock.json` is supported
+- `--save` is no longer necessary but `--save-dev` and `--save-optional` have to be used if needed
+- speeding up installation by using symlinks to centralized store
+- toplevel `preinstall` scripts now run before anything else
+- added `prepack` and `postpack`, which will not run on install only on publish
+- `prepublishOnly` now runs before the tarball to publish is created
+- optimized output
+- lots of other fixes and optimization
+
 
 ## Yarn
 
 [Yarn](https://yarnpkg.com) is an alternative JavaScript package manager built by Facebook,
 Google, Exponent and Tilde.
-Yarn is only a new CLI client that fetches modules from the npm registry.
+Yarn is only a new CLI client that fetches modules from the npm registry. But now with
+the upcoming npm 5 shipped with Node 8 the differences are smelting down.
 
 __yarn.lock__
 
@@ -135,6 +155,8 @@ __Install Module__
 
 ```bash
 # npm call
+$ npm install <package>
+# npm befor v5 needs the save flag
 $ npm install <package> --save
 # yarn call
 $ yarn add <package>

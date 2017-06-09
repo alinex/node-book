@@ -91,10 +91,19 @@ describe('server', () => {
   it('should have default folders', async () => {
     const compiler = new Compiler({schemaPath: 'test/data/config'})
     const files = await compiler.schema()
-    expect(files).to.be.above(1)
+    expect(files, 'config.files').to.have.lengthOf(1)
   })
 
 })
+```
+
+The test itself starts with the `expect` method which should be given the object
+to test and the information about what is tested. This makes the error messages
+readable. after that a concatenation of helpful words and assertion definitions will
+follow (some as functions):
+
+```js
+expect(files, 'config.files').to.have.lengthOf(1)
 ```
 
 ### Plugins

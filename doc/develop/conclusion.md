@@ -77,7 +77,10 @@ module.exports = {
     'no-unused-vars': [ 'warn' ],
     'no-console': [ process.env.NODE_ENV === 'production' ? 'error' : 'warn' ],
     'no-shadow': ['error', { 'allow': ['cb', 'err'] }],
-    'import/prefer-default-export': 'warn'
+    'import/prefer-default-export': 'warn',
+    'no-underscore-dangle': 'off',
+    'no-restricted-syntax': 'off',
+    'no-param-reassign': 'off'
   }
 };
 ```
@@ -117,6 +120,7 @@ bower_components
 # Dependency directories
 node_modules/
 jspm_packages/
+flow-typed/
 
 # Compiled code
 dist
@@ -160,6 +164,7 @@ bower_components
 # Dependency directories
 node_modules/
 jspm_packages/
+flow-typed/
 
 # Development folder
 doc
@@ -264,12 +269,12 @@ __package.json__
     "dev": "nodemon src/index.js --exec 'npm run flow && npm run lint -s && npm run unit'",
     "build": "babel src -d dist --require babel-polyfill",
     "start": "cross-env NODE_ENV=production node dist/index.js",
-    "precommit": "npm run lint",
-    "prepublish": "npm run build",
     "unit": "nyc --require babel-core/register --require babel-polyfill mocha test/mocha",
     "test": "npm run flow && npm run lint && npm run unit",
     "test-travis": "nyc --reporter=lcov --require babel-core/register --require babel-polyfill mocha test/mocha",
-    "lint": "eslint src --ext .js"
+    "lint": "eslint src --ext .js",
+    "postinstall": "node_modules/.bin/flow-typed install --overwrite",
+    "prepublishOnly": "npm run lint -s && npm run build -s"
   },
   "directories": {
     "lib": "./dist"
@@ -302,6 +307,7 @@ __package.json__
     "eslint-plugin-react": "^7.0.1",
     "eslint-plugin-standard": "^3.0.1",
     "flow-bin": "^0.47.0",
+    "flow-typed": "^2.1.2",
     "mocha": "^3.4.1",
     "nodemon": "^1.11.0",
     "nyc": "^10.3.2",

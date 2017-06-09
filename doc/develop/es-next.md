@@ -151,15 +151,20 @@ This can be setup as extension to babel which will strip of the flow definition 
 transpiling:
 
 ```bash
-$ npm install --save-dev flow-bin babel-preset-flow
+$ npm install --save-dev flow-bin flow-typed babel-preset-flow
 $ npm run flow init
 $ sudo npm install flow-bin # needed for some IDEs
+$ node_modules/.bin/flow-typed install # will download your libraries
 ```
 
-Also you have to add the preset `flow`.
+Also you have to add the preset `flow` to babel. Now the compiler will strip off
+all flow extensions and the builded code will work as if it was never there.
 
-Now the compiler will strip of all flow extensions and the builded code will work
-while it was never there.
+After adding new modules you should update your flow-typed libraries:
+
+```bash
+$ node_modules/.bin/flow-typed install --overwrite
+```
 
 ### Usage
 
@@ -171,4 +176,5 @@ $ npm run flow
 $ flow
 ```
 
-This command may be run automatically from the `test` or `dev` task.
+This command may be run automatically from the `test` or `dev` task. And some editors
+like Atom can directly validate and show problems while editing, now.
