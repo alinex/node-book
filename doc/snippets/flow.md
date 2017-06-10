@@ -21,3 +21,29 @@ class SchemaAny {
   }
 }
 ```
+
+__Command concatenation__
+
+If this should be done, don´t define the return type as the current class. Better
+use `this` as return type which will also work if a subclass calls methods from
+it´s superclass:
+
+```js
+/* @flow */
+
+class A {
+  x(): this {
+    return this;
+  }
+}
+
+class B extends A {
+  y(): this {
+    return this;
+  }
+}
+
+var w = new B();
+
+w.x().y();
+```

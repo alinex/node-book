@@ -34,9 +34,11 @@ Some of the commands are:
 
 | Command | Usage |
 | ------- | ----- |
-| `nvm current` | display crrently activated version |
-| `nvm ls` | list installed versions |
-| `nvm ls-remote` | list versions available for install |
+| `nvm current` | display currently activated version |
+| `nvm ls [<version>]` | list installed versions |
+| `nvm ls-remote [<version>]` | list versions available for install |
+| `nvm version <version>` | get best matching installed version |
+| `nvm version-remote <version>` | get best matching remote version |
 | `nvm install <version>` | download and install a version |
 | `nvm uninstall <version>` | uninstall a version |
 | `nvm use <version>` | modify path to use version |
@@ -46,6 +48,33 @@ All node installations are done within the `~/.nvm` directory.
 
 If you detect that the module won't work with specific versions of node you should
 define the working versions in `package.json`.
+
+__Upgrade to new version__
+
+The following command will not only install a new version but also install all
+global modules which were installed in the current version.
+
+```bash
+$ nvm current
+v8.0.0
+$ nvm version-remote 8
+v8.1.0
+$ nvm install 8.1 --reinstall-packages-from=8.0
+Downloading and installing node v8.1.0...
+Downloading https://nodejs.org/dist/v8.1.0/node-v8.1.0-linux-x64.tar.xz...
+######################################################################## 100,0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v8.1.0 (npm v5.0.3)
+
+Reinstalling global packages from v8.0.0...
++ flow-bin@0.47.0
+added 9 packages and updated 1 package in 2.463s
+Linking global packages from v8.0.0...
+```
+
+But after you changed your node version you should call `npm install` in your
+module again.
 
 
 ## NPM
