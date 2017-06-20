@@ -47,3 +47,28 @@ var w = new B();
 
 w.x().y();
 ```
+
+__Uncheck by casting with any__
+
+It's not a very nice solution, but you can cast an object to any. And no unsafe any will be leaked.
+
+```js
+/* @flow */
+
+class A {
+  get clone(): this {
+//    return Object.assign(Object.create(this), this) // flow error
+    return Object.assign((Object.create(this): any), this)
+  }
+}
+
+class B extends A {}
+
+var b = new B()
+var c = b.clone
+```
+
+Here the `Object.create(this)` will normally give an error: Covariant property clone incompatible
+with contravariant use in call of method assign.
+
+The fix is it is casted by any.

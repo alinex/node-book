@@ -30,6 +30,7 @@
 - [Code Snippets](snippets/README.md)
   - [Modules](snippets/module.md)
   - [Flow Annotations](snippets/flow.md)
+  - [Promises](snippets/promises.md)
   - [File IO](snippets/file-io.md)
 
 - [Roadmap](roadmap.md)
