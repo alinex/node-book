@@ -3,7 +3,7 @@
 ## Synchronous functions
 
 A list of functions (maybe mixed with promise based and synchronous) can be processed one after
-each other by concatenating them with an initially created fullfilled Promise.
+each other by concatenating them with an initially created fulfilled Promise.
 
 ```js
 const jobs = [] // list of normal or Promise based functions
