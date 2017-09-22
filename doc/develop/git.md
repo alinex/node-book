@@ -110,6 +110,14 @@ $ git pull    # first pull the changes of others and merge them (automatically)
 $ git push    # now send your own changes
 ```
 
+If you reached a new major, minor or bug fix version or also a special state of the code you should
+add a tag to get this version easily later:
+
+```bash
+$ git tag -a v1.4.0 -m 'version 1.4.0 with ....'
+```
+
+Here a new version 1.4.0 is tagged.
 
 ### Branching
 
