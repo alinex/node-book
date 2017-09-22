@@ -32,5 +32,6 @@
   - [Flow Annotations](snippets/flow.md)
   - [Promises](snippets/promises.md)
   - [File IO](snippets/file-io.md)
+  - [Mocha](snippets/mocha.md)
 
 - [Roadmap](roadmap.md)
