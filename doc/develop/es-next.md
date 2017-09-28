@@ -178,3 +178,7 @@ $ flow
 
 This command may be run automatically from the `test` or `dev` task. And some editors
 like Atom can directly validate and show problems while editing, now.
+
+You may also have a look at some
+[Examples](https://github.com/raquo/facebook-flow-examples/tree/master/examples)
+from the net.
