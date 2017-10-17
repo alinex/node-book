@@ -21,6 +21,7 @@ use in its behavior for you.
 After using Sublime Text 3 for some time I was impressed about [Atom](https://atom.io/).
 Atom is mostly based on JavaScript itself to be easy expendable with plugins. Because of
 that there are a lot of extensions for nearly every language and need.
+Now atom really grew to a full fledged IDE.
 
 ![Atom Editor](atom.png)
 
@@ -28,30 +29,41 @@ that there are a lot of extensions for nearly every language and need.
 
 That is an easy task, only download and install it directly from their homepage.
 
-### General Plugins
+After that you may install the needed plugins, but only install what you really needs
+else it may get bloated. To reset everything remove the directory `~/.atom`.
 
+### General Plugins
+- atom-ide-ui - tools for ide
+- character-table - to easy find any utf character
+
+__Maybe also__
 - project-manager - helps to switch between different workspaces
 - highlight-selected - show all occurrences of the selected text
 - markdown-pdf - transform markdown into pdf
 - pdf-view - view pdf files inline
 - open-in-browser - to open html from the project tree
 - keybinding-cheatsheet - display possible keys
-- character-table - to easy find any utf character
 - tool-bar-atom - customizable toolbar
 
 ### Programming
 
-- git-plus - good integration of git commands
+- docblockr - helper to write inline documentation
 - todo-show - opens a pane for all todos
 - split-diff - shows visual diff between split panes
 - atom-beautify - highlight some included languages
-- docblockr - helper to write inline documentation
 - pigments - color display on definition
 - platformio-ide-terminal - integrated console
 - atom-ternjs - auto completion
-- autocomplete-modules - for require/import auto completion
+- linter-json-lint - JSON linter
+
+__TypeScript__
+- ide-typescript - language support
+- linter-tslint - TypeScript linter
+
+__ES.Next & Co__
 - linter-eslint - included linting
 - flow-ide - to lint flow syntax and autocomplete
+- autocomplete-modules - for require/import auto completion
 
 Also there are language and linter plugins for nearly every language and script
 you use.

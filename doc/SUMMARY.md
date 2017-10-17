@@ -9,6 +9,7 @@
   - [Project Management](develop/management.md)
   - [NodeJS](develop/npm.md)
   - [ES.Next](develop/es-next.md)
+  - [TypeScript](develop/typescript.md)
   - [Testing](develop/test.md)
   - [Continuous Integration](develop/ci.md)
   - [Documentation](develop/doc.md)

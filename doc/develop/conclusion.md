@@ -5,22 +5,32 @@ The basic settings used for my new modules are:
 | Software     | Comment |
 | ------------ | ------- |
 | Node >= 6    | Allows to use ES6 |
-| Babel        | Transpiler used for functionality up to stage-3 |
+| TypeScript   | Type safe superset to ES6 |
 | Mocha        | To run unit tests |
-| Flow         | For typüechecking |
+
+| Alternative  | Comment |
+| ------------ | ------- |
+| Babel        | Transpiler used for functionality up to stage-3 |
+| Flow         | For type checking |
 
 
 ## Initial file structure
 
 All tools together used as an development environment will look like:
 
+    # for TypeScript
+    tsconfig.json           # TS compilation settings
+    tslint.json             # TS linting settings
+    # for ES.Next
     .babelrc                # babel configuration
     .eslintrc.js            # eslint setup
     .flowconfig             # for typechecking setup
+    # repository
     .git                    # git store
     .gitignore              # files to not add to git
     .npmignore              # files to not publish
     .travis.yml             # vm setup for travis
+    # documentation
     book.json               # api book setting
     doc/                    # api book
         cover.jpg           # cover image for pdf, epub
@@ -31,6 +41,7 @@ All tools together used as an development environment will look like:
           pdf.css           # pdf styles
           website.css       # web view styles
         SUMMARY.md          # index tree of book
+    # content
     package.json            # nodejs meta data
     README.md               # short info displayed on npm and github
     src/                    # sources
@@ -45,6 +56,64 @@ All tools together used as an development environment will look like:
 
 The files will look like:
 
+__tslint.json__
+
+```json
+{
+  "defaultSeverity": "warning",
+  "extends": [
+      "tslint:recommended"
+  ],
+  "rules": {
+    "max-line-length": {
+        "options": [120]
+    },
+    "no-console": [true, "log", "warning"],
+    "semicolon": [true, "never"]
+  },
+  "jsRules": {
+    "max-line-length": {
+        "options": [120]
+    }
+  },
+  "rulesDirectory": []
+}
+```
+
+__tsconfig.json__
+
+```json
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "files": [
+    "./node_modules/@types/mocha/index.d.ts",
+    "./node_modules/@types/node/index.d.ts"
+  ],
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
+
 __.babelrc__
 
 ```json
@@ -54,7 +123,7 @@ __.babelrc__
     "stage-3",
     "flow"
   ],
-  "plugins": [],
+  "plugins": ["dynamic-import-node"],
   "comments": false
 }
 ```
@@ -65,10 +134,11 @@ __.eslintrc.js__
 module.exports = {
   env: { es6: true, node: true },
   extends: 'airbnb',
+  plugins: ["flowtype"],
   parser: "babel-eslint",
   parserOptions: { sourceType: 'module' },
   rules: {
-    'max-len': [ 'warn', 100 ],
+    'max-len': [ 'warn', 120 ],
     'indent': [ 'error', 2 ],
     'linebreak-style': [ 'error', 'unix' ],
     'quotes': [ 'error', 'single' ],
@@ -80,7 +150,9 @@ module.exports = {
     'import/prefer-default-export': 'warn',
     'no-underscore-dangle': 'off',
     'no-restricted-syntax': 'off',
-    'no-param-reassign': 'off'
+    'no-multi-str': 'off',
+    'no-param-reassign': 'off',
+    'prefer-destructuring': 'off'
   }
 };
 ```
@@ -155,15 +227,16 @@ bower_components
 .npm
 /*.tgz
 .yarn-integrity
+tsconfig.json
 
 # Other caching like eslint or repl
+tslint.json
 .eslintcache
 .node_repl_history
 
 # Dependency directories
 node_modules/
 jspm_packages/
-flow-typed/
 
 # Development folder
 doc
@@ -182,9 +255,9 @@ __travis.yml__
 language: node_js
 node_js:
 #  - "4"  # LTS   from 2015-10 maintenance till 2018-04
-  - "6"  # LTS   from 2016-10 maintenance till 2019-04
-  - "7"  # devel from 2016-10
-#  - "8"  # LTS   from 2017-10 maintenance till 2019-12
+#  - "6"  # LTS   from 2016-10 maintenance till 2019-04
+#  - "7"  # devel from 2016-10
+  - "8"  # LTS   from 2017-10 maintenance till 2019-12
 #  - "9"  # devel from 2017-10
 os:
   - linux
@@ -227,7 +300,7 @@ __book.json__
   ],
   "pluginsConfig": {
     "downloadpdf": {
-      "base": "https://www.gitbook.com/download/pdf/book/alinex/xxxxxx",
+      "base": "https://www.gitbook.com/download/pdf/book/alinex/rest",
       "label": "Download PDF",
       "multilingual": false
     }
@@ -265,15 +338,27 @@ __package.json__
   "license": "Apache-2.0",
   "main": "./dist/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js --exec 'npm run flow && npm run lint -s && npm run unit'",
-    "build": "babel src -d dist --require babel-polyfill",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
-    "unit": "nyc --require babel-core/register --require babel-polyfill mocha test/mocha",
-    "test": "npm run flow && npm run lint && npm run unit",
-    "test-travis": "nyc --reporter=lcov --require babel-core/register --require babel-polyfill mocha test/mocha",
-    "lint": "eslint src --ext .js",
-    "postinstall": "node_modules/.bin/flow-typed install --overwrite",
-    "prepublishOnly": "npm run lint -s && npm run build -s"
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "test": "mocha -r ts-node/register test/mocha/**.ts",
+    "coverage": "nyc mocha",
+    "dev": "NODE_ENV=development nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "cache": true,
+    "all": true
   },
   "directories": {
     "lib": "./dist"
@@ -283,36 +368,25 @@ __package.json__
     "debug": "^2.6.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.5.1",
-    "babel-preset-flow": "^6.23.0",
-    "babel-preset-stage-3": "^6.24.1",
-    "babel-register": "^6.24.1",
-    "chai": "^4.0.0",
-    "chai-as-promised": "^6.0.0",
-    "coveralls": "^2.13.1",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-config-mocha": "^0.0.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-flowtype": "^2.34.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-mocha-only": "^0.0.3",
-    "eslint-plugin-node": "^4.2.2",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^7.0.1",
-    "eslint-plugin-standard": "^3.0.1",
-    "flow-bin": "^0.47.0",
-    "flow-typed": "^2.1.2",
-    "mocha": "^3.4.1",
-    "nodemon": "^1.11.0",
-    "nyc": "^10.3.2",
-    "request": "^2.81.0",
-    "should": "^11.2.1",
-    "should-http": "^0.1.1"
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.37",
+    "@types/chai": "^4.0.4",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/chai-http": "^3.0.3",
+    "async": "^2.5.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^3.0.0",
+    "codacy-coverage": "^2.0.3",
+    "coveralls": "^3.0.0",
+    "marked-man": "^0.2.1",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "nyc": "^11.2.1",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3",
+    "typescript-eslint-parser": "^8.0.0"
   },
   "engines": {
     "node": ">=6"
